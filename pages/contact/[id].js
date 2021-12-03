@@ -21,21 +21,25 @@ const EditContactpage = () => {
 	return (
 		<Layout>
 			<Header title={`Update Contact`} />
-			{id && contact ? (
-				<>
-					<main className="flex flex-col flex-1 bg-gray-50">
-						<Link href={`/`}>
-							<a className="">Back</a>
-						</Link>
+			<main className="flex flex-col flex-1 bg-gray-50">
+				{id && contact ? (
+					<>
 						<ContactForm {...contact} />
-					</main>
-					<Footer />
-				</>
-			) : (
-				<main className="flex flex-col flex-1 bg-gray-50">
-					<p className="m-auto">No contact found</p>
-				</main>
-			)}
+					</>
+				) : (
+					<div className="flex flex-col items-center justify-center flex-1 p-5">
+						<p className="mb-5">No contact found</p>
+						<Link href="/">
+							<button
+								type="button"
+								className="w-full flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium text-gray-500 bg-gray-200 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300">
+								Go Back
+							</button>
+						</Link>
+					</div>
+				)}
+			</main>
+			<Footer />
 		</Layout>
 	);
 };
