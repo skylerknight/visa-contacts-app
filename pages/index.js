@@ -11,7 +11,7 @@ export default function Home() {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 
-			<div className="flex flex-col m-auto w-full max-w-xl h-[500px] border">
+			<div className="flex flex-col m-auto w-full max-w-lg min-h-[500px] border">
 				<Header />
 				<main className="flex flex-col flex-1 bg-gray-50">
 					<ContactList />

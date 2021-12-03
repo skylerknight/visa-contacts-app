@@ -7,7 +7,7 @@ import ContactsProvider from "../contexts/contacts";
 function MyApp({ Component, pageProps }) {
 	return (
 		<ContactsProvider>
-			<Component {...pageProps} />;
+			<Component {...pageProps} />
 		</ContactsProvider>
 	);
 }
