@@ -20,23 +20,21 @@ const EditContactpage = () => {
 
 	return (
 		<Layout>
-			{id && (
+			<Header title={`Update Contact`} />
+			{id && contact ? (
 				<>
-					{contact ? (
-						<>
-							<Header title="Visa Contacts" />
-							<main className="flex flex-col flex-1 bg-gray-50">
-								<Link href={`/`}>
-									<a className="">Back</a>
-								</Link>
-								<ContactForm {...contact} />
-							</main>
-							<Footer />
-						</>
-					) : (
-						<p>No contact found</p>
-					)}
+					<main className="flex flex-col flex-1 bg-gray-50">
+						<Link href={`/`}>
+							<a className="">Back</a>
+						</Link>
+						<ContactForm {...contact} />
+					</main>
+					<Footer />
 				</>
+			) : (
+				<main className="flex flex-col flex-1 bg-gray-50">
+					<p className="m-auto">No contact found</p>
+				</main>
 			)}
 		</Layout>
 	);
