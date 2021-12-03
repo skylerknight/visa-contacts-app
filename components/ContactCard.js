@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { DotsVerticalIcon } from "@heroicons/react/solid";
 
 const ContactCard = ({ id, email, firstName, lastName, phoneNumber }) => {
@@ -16,9 +17,11 @@ const ContactCard = ({ id, email, firstName, lastName, phoneNumber }) => {
 				</ul>
 			</div>
 			{/* Contact Card Controls */}
-			<button className="flex w-8 h-8 rounded-full ring-offset-2 ring-blue-800 hover:bg-blue-100 hover:text-blue-800 focus:bg-blue-100 focus:text-blue-800 focus:ring-2">
-				<DotsVerticalIcon className="w-5 h-5 m-auto" />
-			</button>
+			<Link href={`/contact/${id}`}>
+				<a className="flex w-8 h-8 rounded-full ring-offset-2 ring-blue-800 hover:bg-blue-100 hover:text-blue-800 focus:bg-blue-100 focus:text-blue-800 focus:ring-2">
+					<DotsVerticalIcon className="w-5 h-5 m-auto" />
+				</a>
+			</Link>
 		</li>
 	);
 };

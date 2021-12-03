@@ -1,9 +1,14 @@
+import Link from "next/link";
 import Head from "next/head";
-import ContactList from "../components/ContactList";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import ContactList from "../components/ContactList";
+
+import { useContacts } from "../contexts/contacts";
 
 export default function Home() {
+	const { setContacts } = useContacts();
+
 	return (
 		<div className="flex flex-col min-h-screen">
 			<Head>
@@ -15,6 +20,9 @@ export default function Home() {
 				<Header />
 				<main className="flex flex-col flex-1 bg-gray-50">
 					<ContactList />
+					<Link href="/contact/new">
+						<a>Add Contact</a>
+					</Link>
 				</main>
 				<Footer />
 			</div>

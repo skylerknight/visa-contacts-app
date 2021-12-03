@@ -10,9 +10,13 @@ export default function ContactsProvider({ children }) {
 			firstName: "Skyler",
 			lastName: "Knight",
 			phoneNumber: "555-555-5555",
-			email: "skylerkngiht@visa.com",
+			email: "skylerknight@visa.com",
 		},
 	]);
 
-	return <ContactsContext.Provider value={{ contacts }}>{children}</ContactsContext.Provider>;
+	return (
+		<ContactsContext.Provider value={{ contacts, setContacts }}>
+			{children}
+		</ContactsContext.Provider>
+	);
 }
