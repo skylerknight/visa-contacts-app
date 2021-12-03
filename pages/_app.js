@@ -1,4 +1,6 @@
 import "@fontsource/poppins";
+import "@fontsource/poppins/500.css";
+
 import "tailwindcss/tailwind.css";
 import ContactsProvider from "../contexts/contacts";
 
