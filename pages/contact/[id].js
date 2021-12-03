@@ -1,5 +1,6 @@
 import React from "react";
 import { useRouter } from "next/router";
+import Layout from "../../components/Layout";
 import { useContacts } from "../../contexts/contacts";
 import ContactForm from "../../components/ContactForm";
 
@@ -15,10 +16,10 @@ const EditContactpage = () => {
 	}, [contacts, id]);
 
 	return (
-		<div>
+		<Layout>
 			<h1>Page for editing contact</h1>
 			{id && <>{contact ? <ContactForm {...contact} /> : <p>No contact found</p>}</>}
-		</div>
+		</Layout>
 	);
 };
 
