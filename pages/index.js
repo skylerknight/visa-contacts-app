@@ -1,9 +1,9 @@
 import Head from "next/head";
-import { useContacts } from "../contexts/contacts";
+import ContactList from "../components/ContactList";
+import Footer from "../components/Footer";
+import Header from "../components/Header";
 
 export default function Home() {
-	const { contacts } = useContacts();
-
 	return (
 		<div className="flex flex-col min-h-screen">
 			<Head>
@@ -12,17 +12,11 @@ export default function Home() {
 			</Head>
 
 			<div className="flex flex-col m-auto w-full max-w-xl h-[500px] border">
-				<header className="flex h-20 bg-blue-700">
-					<h1 className="m-auto text-2xl font-semibold text-white">Contacts App</h1>
-				</header>
-				<main className="flex flex-col flex-1 p-5">
-					{contacts.map(({ id, firstName, lastName }) => (
-						<div key={id} className="">
-							{firstName} {lastName}
-						</div>
-					))}
+				<Header />
+				<main className="flex flex-col flex-1 bg-gray-50">
+					<ContactList />
 				</main>
-				<footer className="h-10 bg-gray-50 border-t"></footer>
+				<Footer />
 			</div>
 		</div>
 	);
