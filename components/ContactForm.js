@@ -1,9 +1,12 @@
 import React from "react";
-import { useForm, setValue } from "react-hook-form";
-import { useContacts } from "../contexts/contacts";
+import { useRouter } from "next/router";
+import { useForm } from "react-hook-form";
+import { useContacts } from "../contexts/contact";
 
 const ContactForm = ({ id, email, firstName, lastName, phoneNumber }) => {
-	const { contacts, setContacts } = useContacts();
+	const router = useRouter();
+	const { contactsDispatch } = useContacts();
+	const [isEdit, setIsEdit] = React.useState(id !== undefined);
 
 	const {
 		formState: { errors },
@@ -12,13 +15,18 @@ const ContactForm = ({ id, email, firstName, lastName, phoneNumber }) => {
 	} = useForm();
 
 	const onSubmit = (data) => {
-		setContacts((ps) => [
-			...ps,
-			{
-				id: Math.floor(Math.random() * 100),
-				...data,
-			},
-		]);
+		const payload = {
+			id: isEdit ? id : Math.floor(Math.random() * 100),
+			...data,
+		};
+
+		if (isEdit) {
+			contactsDispatch({ type: "UPDATE_CONTACT", payload });
+		} else {
+			contactsDispatch({ type: "CREATE_CONTACT", payload });
+		}
+
+		router.push("/");
 	};
 
 	const onError = (errors) => {
@@ -62,7 +70,7 @@ const ContactForm = ({ id, email, firstName, lastName, phoneNumber }) => {
 			/>
 			{errors.phoneNumber && <span>This field is required</span>}
 
-			<button type="submit">Create Contact</button>
+			<button type="submit">{isEdit ? "Update Contact" : "Create Contact"}</button>
 		</form>
 	);
 };

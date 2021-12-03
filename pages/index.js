@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import ContactList from "../components/ContactList";
 
-import { useContacts } from "../contexts/contacts";
+import { useContacts } from "../contexts/contact";
 
 export default function Home() {
 	const { setContacts } = useContacts();

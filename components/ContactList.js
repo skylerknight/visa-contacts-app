@@ -1,6 +1,6 @@
 import React from "react";
 import ContactCard from "./ContactCard";
-import { useContacts } from "../contexts/contacts";
+import { useContacts } from "../contexts/contact";
 
 const ContactList = () => {
 	const { contacts } = useContacts();

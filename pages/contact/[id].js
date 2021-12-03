@@ -1,7 +1,8 @@
 import React from "react";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import Layout from "../../components/Layout";
-import { useContacts } from "../../contexts/contacts";
+import { useContacts } from "../../contexts/contact";
 import ContactForm from "../../components/ContactForm";
 
 const EditContactpage = () => {
@@ -18,6 +19,9 @@ const EditContactpage = () => {
 	return (
 		<Layout>
 			<h1>Page for editing contact</h1>
+			<Link href={`/`}>
+				<a className="">Back</a>
+			</Link>
 			{id && <>{contact ? <ContactForm {...contact} /> : <p>No contact found</p>}</>}
 		</Layout>
 	);
