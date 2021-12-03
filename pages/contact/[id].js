@@ -2,6 +2,8 @@ import React from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Layout from "../../components/Layout";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 import { useContacts } from "../../contexts/contact";
 import ContactForm from "../../components/ContactForm";
 
@@ -18,11 +20,24 @@ const EditContactpage = () => {
 
 	return (
 		<Layout>
-			<h1>Page for editing contact</h1>
-			<Link href={`/`}>
-				<a className="">Back</a>
-			</Link>
-			{id && <>{contact ? <ContactForm {...contact} /> : <p>No contact found</p>}</>}
+			{id && (
+				<>
+					{contact ? (
+						<>
+							<Header title="Visa Contacts" />
+							<main className="flex flex-col flex-1 bg-gray-50">
+								<Link href={`/`}>
+									<a className="">Back</a>
+								</Link>
+								<ContactForm {...contact} />
+							</main>
+							<Footer />
+						</>
+					) : (
+						<p>No contact found</p>
+					)}
+				</>
+			)}
 		</Layout>
 	);
 };
