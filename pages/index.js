@@ -8,12 +8,12 @@ export default function Home() {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 
-			<div className="flex flex-col justify-between m-auto w-full max-w-xl h-80 border">
-				<header></header>
-				<main className="flex flex-col">
-					<h1 className="text-3xl font-bold">Contacts App</h1>
-				</main>
-				<footer></footer>
+			<div className="flex flex-col m-auto w-full max-w-xl h-[500px] border">
+				<header className="flex h-20 bg-blue-700">
+					<h1 className="m-auto text-2xl font-semibold text-white">Contacts App</h1>
+				</header>
+				<main className="flex flex-col flex-1 p-5"></main>
+				<footer className="h-10 bg-gray-50 border-t"></footer>
 			</div>
 		</div>
 	);
