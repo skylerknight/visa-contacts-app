@@ -1,22 +1,21 @@
 import React from "react";
+import Link from "next/link";
+import { v4 as uuidv4 } from "uuid";
 import { useRouter } from "next/router";
-import { useForm } from "react-hook-form";
 import { useContacts } from "../contexts/contact";
+import { FormProvider, useForm } from "react-hook-form";
+import ContactFormInput from "../components/ContactFormInput";
 
 const ContactForm = ({ id, email, firstName, lastName, phoneNumber }) => {
 	const router = useRouter();
 	const { contactsDispatch } = useContacts();
 	const [isEdit, setIsEdit] = React.useState(id !== undefined);
 
-	const {
-		formState: { errors },
-		handleSubmit,
-		register,
-	} = useForm();
+	const methods = useForm();
 
 	const onSubmit = (data) => {
 		const payload = {
-			id: isEdit ? id : Math.floor(Math.random() * 100),
+			id: isEdit ? id : uuidv4(),
 			...data,
 		};
 
@@ -29,49 +28,35 @@ const ContactForm = ({ id, email, firstName, lastName, phoneNumber }) => {
 		router.push("/");
 	};
 
-	const onError = (errors) => {
-		console.log(errors);
-	};
-
 	return (
-		<form onSubmit={handleSubmit(onSubmit)} className="flex flex-col space-y-5">
-			<label htmlFor="firstName">First Name</label>
-			<input
-				type="text"
-				id="firstName"
-				name="firstName"
-				placeholder="First Name"
-				defaultValue={firstName || ""}
-				{...register("firstName", { required: true })}
-			/>
-			{errors.firstName && <span>This field is required</span>}
-
-			<label htmlFor="lastName">Last Name</label>
-			<input
-				type="text"
-				id="lastName"
-				name="lastName"
-				placeholder="Last Name"
-				defaultValue={lastName || ""}
-				{...register("lastName", { required: true })}
-			/>
-			{errors.lastName && <span>This field is required</span>}
-
-			<label htmlFor="phoneNumber">Phone Number</label>
-			<input
-				type="tel"
-				id="phoneNumber"
-				name="phoneNumber"
-				placeholder="Phone Number"
-				defaultValue={phoneNumber || ""}
-				{...register("phoneNumber", {
-					required: true,
-				})}
-			/>
-			{errors.phoneNumber && <span>This field is required</span>}
-
-			<button type="submit">{isEdit ? "Update Contact" : "Create Contact"}</button>
-		</form>
+		<FormProvider {...methods}>
+			<form onSubmit={methods.handleSubmit(onSubmit)} className="flex flex-col space-y-5 p-5">
+				<div className="flex flex-row space-x-5">
+					<ContactFormInput name="firstName" label="First Name" defaultValue={firstName} />
+					<ContactFormInput name="lastName" label="Last Name" defaultValue={lastName} />
+				</div>
+				<div>
+					<ContactFormInput name="phoneNumber" label="Phone Number" defaultValue={phoneNumber} />
+				</div>
+				<div>
+					<ContactFormInput name="email" label="Email Address" defaultValue={email} />
+				</div>
+				<div className="flex flex-row space-x-5 pt-5">
+					<Link href="/">
+						<button
+							type="button"
+							className="w-full flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium text-gray-500 bg-gray-200 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300">
+							Cancel
+						</button>
+					</Link>
+					<button
+						type="submit"
+						className="w-full flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium text-white bg-blue-800 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-800">
+						{isEdit ? "Update Contact" : "Create Contact"}
+					</button>
+				</div>
+			</form>
+		</FormProvider>
 	);
 };
 
