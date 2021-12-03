@@ -5,7 +5,7 @@ import Layout from "../../components/Layout";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import { useContacts } from "../../contexts/contact";
-import ContactForm from "../../components/ContactForm";
+import ContactForm from "../../components/forms/ContactForm";
 
 const EditContactpage = () => {
 	const router = useRouter();

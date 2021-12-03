@@ -3,7 +3,7 @@ import Link from "next/link";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Layout from "../../components/Layout";
-import ContactForm from "../../components/ContactForm";
+import ContactForm from "../../components/forms/ContactForm";
 
 const CreateContactPage = () => {
 	return (

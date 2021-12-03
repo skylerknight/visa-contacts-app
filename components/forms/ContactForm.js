@@ -2,9 +2,9 @@ import React from "react";
 import Link from "next/link";
 import { v4 as uuidv4 } from "uuid";
 import { useRouter } from "next/router";
-import { useContacts } from "../contexts/contact";
+import { useContacts } from "../../contexts/contact";
 import { FormProvider, useForm } from "react-hook-form";
-import ContactFormInput from "../components/ContactFormInput";
+import ContactFormInput from "./ContactFormInput";
 
 const ContactForm = ({ id, email, firstName, lastName, phoneNumber }) => {
 	const router = useRouter();
