@@ -1,3 +1,5 @@
+const colors = require("tailwindcss/colors");
+
 module.exports = {
 	mode: "jit",
 	purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
@@ -6,7 +8,11 @@ module.exports = {
 		fontFamily: {
 			sans: ["Poppins", "sans-serif"],
 		},
-		extend: {},
+		extend: {
+			colors: {
+				gray: colors.blueGray,
+			},
+		},
 	},
 	variants: {
 		extend: {},
