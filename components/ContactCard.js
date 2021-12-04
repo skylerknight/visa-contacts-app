@@ -56,13 +56,27 @@ const ContactCard = ({ id, email, firstName, lastName, phoneNumber }) => {
 						</Link>
 					</header>
 					<ul className="p-5 space-y-5">
-						<li className="text-sm flex flex-row">
-							<PhoneIcon className="w-5 h-5 mr-4 text-gray-400" />
-							{phoneNumber}
+						<li className="text-sm flex flex-row items-center justify-between text-gray-500">
+							<div className="flex flex-col">
+								<label className="mb-2 font-bold text-xs uppercase text-[#242424]">
+									Phone Number
+								</label>
+								{phoneNumber}
+							</div>
+							<button className="w-8 h-8 flex flex-row rounded-full bg-blue-100 text-blue-800">
+								<PhoneIcon className="w-5 h-5 m-auto" />
+							</button>
 						</li>
-						<li className="text-sm flex flex-row">
-							<MailIcon className="w-5 h-5 mr-4 text-gray-400" />
-							{email}
+						<li className="text-sm flex flex-row items-center justify-between text-gray-500">
+							<div className="flex flex-col">
+								<label className="mb-2 font-bold text-xs uppercase text-[#242424]">
+									Email Address
+								</label>
+								{email}
+							</div>
+							<button className="w-8 h-8 flex flex-row rounded-full bg-blue-100 text-blue-800">
+								<MailIcon className="w-5 h-5 m-auto" />
+							</button>
 						</li>
 					</ul>
 					<div className="w-full grid grid-flow-col p-4 space-x-5 border-t">
