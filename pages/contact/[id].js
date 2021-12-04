@@ -16,8 +16,9 @@ const EditContactpage = () => {
 	const [contact, setContact] = React.useState(null);
 
 	React.useEffect(() => {
-		if (id === undefined) return;
-		setContact(contacts.find((contact) => contact.id === parseInt(id)) || null);
+		if (id == null) return;
+		setContact(contacts.find((contact) => contact.id === id) || null);
+		console.log(contact);
 	}, [contacts, id]);
 
 	return (

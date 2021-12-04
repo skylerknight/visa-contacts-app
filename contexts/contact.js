@@ -25,21 +25,21 @@ const contactsReducer = (state, action) => {
 export default function ContactsProvider({ children }) {
 	const [contacts, contactsDispatch] = React.useReducer(contactsReducer, [
 		{
-			id: 1,
+			id: "1",
 			firstName: "Skyler",
 			lastName: "Knight",
 			phoneNumber: "555-555-5555",
 			email: "skylerknight@visa.com",
 		},
 		{
-			id: 2,
+			id: "2",
 			firstName: "Jane",
 			lastName: "Doe",
 			phoneNumber: "555-555-5555",
 			email: "janedoe@visa.com",
 		},
 		{
-			id: 3,
+			id: "3",
 			firstName: "The",
 			lastName: "Rock",
 			phoneNumber: "555-555-5555",
