@@ -8,7 +8,7 @@ const Header = ({ leftControl, rightControl, title, centerTitle }) => {
 				<div className="ml-auto">{rightControl}</div>
 			</div>
 			<div className="px-5 mt-10 w-full max-w-screen-md mx-auto">
-				<h1 className={`text-xl ${centerTitle && "text-left"} font-bold px-2 text-[#242424]`}>
+				<h1 className={`text-xl ${centerTitle && "text-center"} font-bold px-2 text-[#242424]`}>
 					{title}
 				</h1>
 			</div>
