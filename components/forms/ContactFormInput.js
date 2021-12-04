@@ -12,7 +12,7 @@ const ContactFormInput = ({ name, label, defaultValue }) => {
 			<label htmlFor={name} className="block text-sm font-medium text-gray-700">
 				{label}
 			</label>
-			<div className="mt-1">
+			<div className="mt-3">
 				<input
 					id={name}
 					name={name}

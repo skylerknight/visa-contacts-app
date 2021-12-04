@@ -29,7 +29,9 @@ const ContactForm = ({ id, email, firstName, lastName, phoneNumber }) => {
 
 	return (
 		<FormProvider {...methods}>
-			<form onSubmit={methods.handleSubmit(onSubmit)} className="flex flex-col space-y-5 p-10">
+			<form
+				onSubmit={methods.handleSubmit(onSubmit)}
+				className="flex flex-col space-y-10 p-10 w-full max-w-2xl m-auto">
 				<div className="flex flex-row space-x-5">
 					<ContactFormInput name="firstName" label="First Name" defaultValue={firstName} />
 					<ContactFormInput name="lastName" label="Last Name" defaultValue={lastName} />
