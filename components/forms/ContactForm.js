@@ -33,7 +33,7 @@ const ContactForm = ({ id, email, firstName, lastName, phoneNumber }) => {
 				onSubmit={methods.handleSubmit(onSubmit)}
 				className="flex flex-col space-y-8 p-10 w-full max-w-2xl m-auto">
 				<div className="flex flex-row mb-5">
-					<div className="w-32 h-32 m-auto bg-blue-100 rounded-full"></div>
+					<div className="w-24 h-24 m-auto bg-blue-100 rounded-full"></div>
 				</div>
 				<div className="flex flex-row space-x-5">
 					<ContactFormInput name="firstName" label="First Name" defaultValue={firstName} />

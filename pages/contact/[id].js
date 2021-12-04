@@ -35,6 +35,7 @@ const EditContactpage = () => {
 				}
 			/>
 			<main className="flex flex-col flex-1">
+				<h1 className="p-5 font-bold text-[#242424] text-xl text-center">Update Contact</h1>
 				{id && contact ? (
 					<>
 						<ContactForm {...contact} />
