@@ -52,13 +52,11 @@ const ContactCard = ({ id, email, firstName, lastName, phoneNumber }) => {
 								{firstName} {lastName}
 							</h3>
 						</div>
-						<Link href={`/contact/${id}`}>
-							<a className="flex w-8 h-8">
-								<ChevronUpIcon className="w-5 h-5 m-auto" />
-							</a>
-						</Link>
+						<button className="flex w-8 h-8" onClick={handleCardClick}>
+							<ChevronUpIcon className="w-5 h-5 m-auto" />
+						</button>
 					</header>
-					<ul className="p-5 space-y-5">
+					<ul className="px-6 py-5 space-y-5">
 						<li className="text-sm flex flex-row items-center justify-between text-gray-500">
 							<div className="flex flex-col">
 								<label className="mb-2 font-bold text-xs uppercase text-[#242424]">
@@ -66,9 +64,6 @@ const ContactCard = ({ id, email, firstName, lastName, phoneNumber }) => {
 								</label>
 								{phoneNumber}
 							</div>
-							<button className="w-8 h-8 flex flex-row rounded-full bg-blue-100 text-blue-800">
-								<PhoneIcon className="w-5 h-5 m-auto" />
-							</button>
 						</li>
 						<li className="text-sm flex flex-row items-center justify-between text-gray-500">
 							<div className="flex flex-col">
@@ -77,18 +72,17 @@ const ContactCard = ({ id, email, firstName, lastName, phoneNumber }) => {
 								</label>
 								{email}
 							</div>
-							<button className="w-8 h-8 flex flex-row rounded-full bg-blue-100 text-blue-800">
-								<MailIcon className="w-5 h-5 m-auto" />
-							</button>
 						</li>
 					</ul>
-					<div className="w-full grid grid-flow-col p-4 space-x-5 border-t">
-						<button className="px-4 py-2 flex flex-row items-center justify-center  bg-gray-200">
-							Edit
+					<div className="w-full flex flex-row justify-between p-4 space-x-5 border-t">
+						<button className="w-10 h-10 flex flex-row items-center justify-center text-red-500">
+							<TrashIcon className="w-5 h-5" />
 						</button>
-						<button className="px-4 py-2 flex flex-row items-center justify-center  border border-red-500 text-red-500">
-							Delete
-						</button>
+						<Link href={`/contact/${id}`}>
+							<button className="px-4 py-2 border flex flex-row items-center justify-center text-sm">
+								<PencilIcon className="w-5 h-5 mr-3" /> Edit
+							</button>
+						</Link>
 					</div>
 				</div>
 			)}
