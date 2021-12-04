@@ -50,13 +50,13 @@ const ContactForm = ({ id, email, firstName, lastName, phoneNumber }) => {
 						<button
 							type="button"
 							onClick={null}
-							className="w-full flex justify-center py-3 px-4 rounded-lg border border-transparent shadow-sm text-sm font-medium text-gray-800 bg-gray-200 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300">
+							className="w-full flex justify-center py-3 px-4  border border-transparent shadow-sm text-sm font-medium text-gray-800 bg-gray-200 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300">
 							Cancel
 						</button>
 					</Link>
 					<button
 						type="submit"
-						className="w-full flex justify-center py-3 px-4 rounded-lg border border-transparent shadow-sm text-sm font-medium text-white bg-blue-800 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-800">
+						className="w-full flex justify-center py-3 px-4  border border-transparent shadow-sm text-sm font-medium text-white bg-blue-800 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-800">
 						{id == null ? "Save" : "Create"}
 					</button>
 				</div>

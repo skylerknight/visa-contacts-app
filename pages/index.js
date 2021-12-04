@@ -18,7 +18,7 @@ export default function Home() {
 				title="All Contacts"
 				rightControl={
 					<Link href="/contact/new">
-						<button className="flex flex-row items-center border px-3 py-2 rounded-md text-sm font-bold bg-blue-800 text-white">
+						<button className="flex flex-row items-center border px-3 py-2  text-sm font-bold bg-blue-800 text-white">
 							New Contact
 						</button>
 					</Link>

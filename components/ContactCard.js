@@ -8,6 +8,7 @@ import {
 	PhoneIcon,
 	TrashIcon,
 	MailIcon,
+	UserIcon,
 } from "@heroicons/react/outline";
 
 const ContactCard = ({ id, email, firstName, lastName, phoneNumber }) => {
@@ -18,12 +19,12 @@ const ContactCard = ({ id, email, firstName, lastName, phoneNumber }) => {
 	};
 
 	return (
-		<article
-			className="rounded-lg border shadow-sm overflow-hidden bg-white"
-			onClick={handleCardClick}>
+		<article className="border shadow-sm overflow-hidden bg-white" onClick={handleCardClick}>
 			{!isExpanded ? (
 				<header className="flex flex-row items-center justify-center space-x-5 p-4">
-					<div className="flex flex-col w-12 h-12 rounded-full bg-blue-100"></div>
+					<div className="flex flex-col w-12 h-12 rounded-full bg-blue-100">
+						<UserIcon className="w-6 h-6 m-auto text-blue-800" />
+					</div>
 
 					<div className="flex-1">
 						<h3 className="font-bold text-sm">
@@ -42,7 +43,9 @@ const ContactCard = ({ id, email, firstName, lastName, phoneNumber }) => {
 			) : (
 				<div className="flex flex-col">
 					<header className="flex flex-row items-center justify-center space-x-5 p-4 border-b">
-						<div className="flex flex-col w-12 h-12 rounded-full bg-blue-100"></div>
+						<div className="flex flex-col w-12 h-12 rounded-full bg-blue-100">
+							<UserIcon className="w-6 h-6 m-auto text-blue-800" />
+						</div>
 
 						<div className="flex-1">
 							<h3 className="font-bold text-lg">
@@ -80,10 +83,10 @@ const ContactCard = ({ id, email, firstName, lastName, phoneNumber }) => {
 						</li>
 					</ul>
 					<div className="w-full grid grid-flow-col p-4 space-x-5 border-t">
-						<button className="px-4 py-2 flex flex-row items-center justify-center rounded-lg bg-gray-200">
+						<button className="px-4 py-2 flex flex-row items-center justify-center  bg-gray-200">
 							Edit
 						</button>
-						<button className="px-4 py-2 flex flex-row items-center justify-center rounded-lg bg-red-500 text-white">
+						<button className="px-4 py-2 flex flex-row items-center justify-center  border border-red-500 text-red-500">
 							Delete
 						</button>
 					</div>
