@@ -11,6 +11,7 @@ const CreateContactPage = () => {
 	return (
 		<Layout>
 			<Header
+				centerTitle
 				title="Create Contact"
 				leftControl={
 					<Link href="/">
@@ -22,7 +23,6 @@ const CreateContactPage = () => {
 				}
 			/>
 			<main className="flex flex-col flex-1 w-full max-w-screen-md m-auto">
-				<h1 className="p-5 font-bold text-[#242424] text-xl text-center">Create a New Contact</h1>
 				<ContactForm />
 			</main>
 			<Footer />

@@ -24,6 +24,7 @@ const EditContactpage = () => {
 	return (
 		<Layout>
 			<Header
+				centerTitle
 				title={`Update Contact`}
 				leftControl={
 					<Link href="/">
@@ -34,8 +35,7 @@ const EditContactpage = () => {
 					</Link>
 				}
 			/>
-			<main className="flex flex-col flex-1">
-				<h1 className="p-5 font-bold text-[#242424] text-xl text-center">Update Contact</h1>
+			<main className="flex flex-col flex-1 w-full max-w-screen-md m-auto">
 				{id && contact ? (
 					<>
 						<ContactForm {...contact} />

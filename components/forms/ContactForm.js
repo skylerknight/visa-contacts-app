@@ -31,7 +31,7 @@ const ContactForm = ({ id, email, firstName, lastName, phoneNumber }) => {
 		<FormProvider {...methods}>
 			<form
 				onSubmit={methods.handleSubmit(onSubmit)}
-				className="flex flex-col space-y-8 p-10 w-full max-w-2xl m-auto">
+				className="flex flex-col space-y-8 p-10 w-full">
 				<div className="flex flex-row mb-5">
 					<div className="w-24 h-24 m-auto bg-blue-100 rounded-full"></div>
 				</div>
