@@ -5,7 +5,7 @@ import { useContacts } from "../contexts/contact";
 const ContactList = () => {
 	const { contacts } = useContacts();
 	return (
-		<ul className="p-5 space-y-5">
+		<ul className="p-10 space-y-5">
 			{contacts.map((contact) => (
 				<ContactCard key={contact.id} {...contact} />
 			))}

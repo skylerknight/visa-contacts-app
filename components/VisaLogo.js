@@ -8,7 +8,7 @@ const VisaLogo = ({ color, size }) => {
 				focusable="false"
 				data-prefix="fab"
 				data-icon="cc-visa"
-				className={`text-blue-800 fill-current svg-inline--fa fa-cc-visa fa-w-18`}
+				className={`text-yellow-400 fill-current svg-inline--fa fa-cc-visa fa-w-18`}
 				role="img"
 				xmlns="http://www.w3.org/2000/svg"
 				viewBox="0 0 576 512">

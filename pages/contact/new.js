@@ -5,14 +5,22 @@ import Footer from "../../components/Footer";
 import Layout from "../../components/Layout";
 import ContactForm from "../../components/forms/ContactForm";
 
+import { ArrowLeftIcon } from "@heroicons/react/solid";
+
 const CreateContactPage = () => {
 	return (
 		<Layout>
-			<Header title="Create Contact" />
+			<Header
+				title="Create Contact"
+				leftControl={
+					<Link href="/">
+						<button type="button" className="flex w-8 h-8">
+							<ArrowLeftIcon className="w-5 h-5 m-auto" />
+						</button>
+					</Link>
+				}
+			/>
 			<main className="flex flex-col flex-1 bg-gray-50">
-				<Link href={`/`}>
-					<a className="">Back</a>
-				</Link>
 				<ContactForm />
 			</main>
 			<Footer />

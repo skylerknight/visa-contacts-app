@@ -1,11 +1,12 @@
 import React from "react";
-import VisaLogo from "./VisaLogo.js";
 
-const Header = ({ title }) => {
+const Header = ({ leftControl, rightControl, title }) => {
 	return (
-		<header className="flex flex-row items-center justify-around px-3 py-2 h-16 border-b bg-white">
+		<header className="flex flex-row items-center justify-between px-3 py-2 h-16 border-b bg-white">
 			{/* <VisaLogo /> */}
-			<h1 className="text-lg font-bold px-2 text-blue-800">{title}</h1>
+			<div className="mr-auto w-8 h-8">{leftControl}</div>
+			<h1 className="text-md font-bold px-2 text-gray-700">{title}</h1>
+			<div className="ml-auto w-8 h-8">{rightControl}</div>
 		</header>
 	);
 };
