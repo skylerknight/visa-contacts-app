@@ -26,6 +26,7 @@ export default function Home() {
 			/>
 			<main className="flex flex-col flex-1">
 				<div className="p-10 w-full max-w-screen-md mx-auto">
+					<h1 className="p-5 font-bold text-[#242424] text-xl">All Contacts</h1>
 					<ContactList />
 				</div>
 			</main>

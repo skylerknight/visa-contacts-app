@@ -1,7 +1,14 @@
 import React from "react";
 import Link from "next/link";
 
-import { ChevronDownIcon } from "@heroicons/react/solid";
+import {
+	ChevronDownIcon,
+	ChevronUpIcon,
+	PencilIcon,
+	PhoneIcon,
+	TrashIcon,
+	MailIcon,
+} from "@heroicons/react/outline";
 
 const ContactCard = ({ id, email, firstName, lastName, phoneNumber }) => {
 	const [isExpanded, setIsExpanded] = React.useState(false);
@@ -11,30 +18,64 @@ const ContactCard = ({ id, email, firstName, lastName, phoneNumber }) => {
 	};
 
 	return (
-		<li
-			className="flex flex-row items-center space-x-5 p-4 rounded-lg border border-blue-100 bg-white"
+		<article
+			className="rounded-lg border shadow-sm overflow-hidden bg-white"
 			onClick={handleCardClick}>
-			{/* Avatar */}
-			<div className="flex flex-col w-12 h-12 rounded-full bg-yellow-100"></div>
-			{/* Full Name */}
-			<div className="flex-1">
-				<h3 className="font-bold text-sm">
-					{firstName} {lastName}
-				</h3>
-				{isExpanded && (
-					<ul className="mt-1">
-						<li className="text-sm text-gray-400">{phoneNumber}</li>
-						<li className="text-sm text-gray-400">{email}</li>
+			{!isExpanded ? (
+				<header className="flex flex-row items-center justify-center space-x-5 p-4">
+					<div className="flex flex-col w-12 h-12 rounded-full bg-blue-100"></div>
+
+					<div className="flex-1">
+						<h3 className="font-bold text-sm">
+							{firstName} {lastName}
+						</h3>
+						<ul className="mt-1">
+							<li className="text-sm text-gray-400">{phoneNumber}</li>
+						</ul>
+					</div>
+					<Link href={`/contact/${id}`}>
+						<a className="flex w-8 h-8">
+							<ChevronDownIcon className="w-5 h-5 m-auto" />
+						</a>
+					</Link>
+				</header>
+			) : (
+				<div className="flex flex-col">
+					<header className="flex flex-row items-center justify-center space-x-5 p-4 border-b">
+						<div className="flex flex-col w-12 h-12 rounded-full bg-blue-100"></div>
+
+						<div className="flex-1">
+							<h3 className="font-bold text-lg">
+								{firstName} {lastName}
+							</h3>
+						</div>
+						<Link href={`/contact/${id}`}>
+							<a className="flex w-8 h-8">
+								<ChevronUpIcon className="w-5 h-5 m-auto" />
+							</a>
+						</Link>
+					</header>
+					<ul className="p-5 space-y-5">
+						<li className="text-sm flex flex-row">
+							<PhoneIcon className="w-5 h-5 mr-4 text-gray-400" />
+							{phoneNumber}
+						</li>
+						<li className="text-sm flex flex-row">
+							<MailIcon className="w-5 h-5 mr-4 text-gray-400" />
+							{email}
+						</li>
 					</ul>
-				)}
-			</div>
-			{/* Contact Card Controls */}
-			<Link href={`/contact/${id}`}>
-				<a className="flex w-8 h-8 rounded-full ring-offset-2 ring-blue-800 hover:bg-blue-100 hover:text-blue-800 focus:bg-blue-100 focus:text-blue-800 focus:ring-2">
-					<ChevronDownIcon className="w-5 h-5 m-auto" />
-				</a>
-			</Link>
-		</li>
+					<div className="w-full grid grid-flow-col p-4 space-x-5 border-t">
+						<button className="px-4 py-2 flex flex-row items-center justify-center rounded-lg bg-gray-200">
+							Edit
+						</button>
+						<button className="px-4 py-2 flex flex-row items-center justify-center rounded-lg bg-red-500 text-white">
+							Delete
+						</button>
+					</div>
+				</div>
+			)}
+		</article>
 	);
 };
 
