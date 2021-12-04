@@ -7,7 +7,7 @@ import ContactForm from "../../components/forms/ContactForm";
 
 import { useRouter } from "next/router";
 import { useContacts } from "../../contexts/contact";
-import { ArrowLeftIcon } from "@heroicons/react/solid";
+import { ChevronLeftIcon } from "@heroicons/react/solid";
 
 const EditContactpage = () => {
 	const router = useRouter();
@@ -26,8 +26,9 @@ const EditContactpage = () => {
 				title={`Update Contact`}
 				leftControl={
 					<Link href="/">
-						<button type="button" className="flex w-8 h-8">
-							<ArrowLeftIcon className="w-5 h-5 m-auto" />
+						<button className="flex flex-row items-center border px-3 py-2 rounded-md text-sm font-bold">
+							<ChevronLeftIcon className="w-5 h-5 mr-2" />
+							Back
 						</button>
 					</Link>
 				}

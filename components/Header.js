@@ -1,15 +1,15 @@
 import React from "react";
+import { ChevronLeftIcon } from "@heroicons/react/solid";
 
 const Header = ({ leftControl, rightControl, title }) => {
 	return (
-		<header className="flex flex-col items-center justify-between border-b p-5 bg-white">
-			{/* <VisaLogo /> */}
-			<div className="flex flex-row w-full items-center justify-between">
-				<div className="mr-auto w-8 h-8">{leftControl}</div>
-				<div className="ml-auto w-8 h-8">{rightControl}</div>
+		<header className="flex flex-row items-center justify-center relative p-5 border-b bg-white">
+			<div className="relative z-20">
+				<h1 className="text-lg font-bold px-2 text-[#242424]">{title}</h1>
 			</div>
-			<div className="px-5 py-5">
-				<h1 className="text-4xl font-bold px-2 text-[#242424]">{title}</h1>
+			<div className="absolute inset-5 flex flex-row items-center justify-center z-10">
+				<div className="mr-auto">{leftControl}</div>
+				<div className="ml-auto">{rightControl}</div>
 			</div>
 		</header>
 	);

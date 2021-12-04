@@ -18,14 +18,16 @@ export default function Home() {
 				title="All Contacts"
 				rightControl={
 					<Link href="/contact/new">
-						<button type="button" className="flex w-8 h-8">
-							<PlusCircleIcon className="w-5 h-5 m-auto" />
+						<button className="flex flex-row items-center border px-3 py-2 rounded-md text-sm font-bold bg-blue-800 text-white">
+							New Contact
 						</button>
 					</Link>
 				}
 			/>
 			<main className="flex flex-col flex-1">
-				<ContactList />
+				<div className="p-10 w-full max-w-screen-md mx-auto">
+					<ContactList />
+				</div>
 			</main>
 			<Footer />
 		</Layout>

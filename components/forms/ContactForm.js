@@ -18,10 +18,10 @@ const ContactForm = ({ id, email, firstName, lastName, phoneNumber }) => {
 			...data,
 		};
 
-		if (isEdit) {
-			contactsDispatch({ type: "UPDATE_CONTACT", payload });
-		} else {
+		if (id == null) {
 			contactsDispatch({ type: "CREATE_CONTACT", payload });
+		} else {
+			contactsDispatch({ type: "UPDATE_CONTACT", payload });
 		}
 
 		router.push("/");
@@ -31,7 +31,10 @@ const ContactForm = ({ id, email, firstName, lastName, phoneNumber }) => {
 		<FormProvider {...methods}>
 			<form
 				onSubmit={methods.handleSubmit(onSubmit)}
-				className="flex flex-col space-y-10 p-10 w-full max-w-2xl m-auto">
+				className="flex flex-col space-y-8 p-10 w-full max-w-2xl m-auto">
+				<div className="flex flex-row mb-5">
+					<div className="w-32 h-32 m-auto bg-blue-100 rounded-full"></div>
+				</div>
 				<div className="flex flex-row space-x-5">
 					<ContactFormInput name="firstName" label="First Name" defaultValue={firstName} />
 					<ContactFormInput name="lastName" label="Last Name" defaultValue={lastName} />
@@ -47,14 +50,14 @@ const ContactForm = ({ id, email, firstName, lastName, phoneNumber }) => {
 						<button
 							type="button"
 							onClick={null}
-							className="w-full flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium text-gray-500 bg-gray-200 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300">
+							className="w-full flex justify-center py-3 px-4 rounded-lg border border-transparent shadow-sm text-sm font-medium text-gray-800 bg-gray-200 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300">
 							Cancel
 						</button>
 					</Link>
 					<button
 						type="submit"
-						className="w-full flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium text-white bg-blue-800 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-800">
-						{id ? "Save" : "Create"}
+						className="w-full flex justify-center py-3 px-4 rounded-lg border border-transparent shadow-sm text-sm font-medium text-white bg-blue-800 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-800">
+						{id == null ? "Save" : "Create"}
 					</button>
 				</div>
 			</form>
