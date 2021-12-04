@@ -24,7 +24,7 @@ export default function Home() {
 					</Link>
 				}
 			/>
-			<main className="flex flex-col flex-1 bg-gray-50">
+			<main className="flex flex-col flex-1">
 				<ContactList />
 			</main>
 			<Footer />

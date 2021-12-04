@@ -12,7 +12,7 @@ const ContactCard = ({ id, email, firstName, lastName, phoneNumber }) => {
 
 	return (
 		<li
-			className="flex flex-row items-center space-x-5 p-4 shadow-md bg-white"
+			className="flex flex-row items-center space-x-5 p-4 border bg-white"
 			onClick={handleCardClick}>
 			{/* Avatar */}
 			<div className="flex flex-col w-12 h-12 rounded-full bg-yellow-100"></div>

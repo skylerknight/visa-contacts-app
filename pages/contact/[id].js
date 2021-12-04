@@ -32,7 +32,7 @@ const EditContactpage = () => {
 					</Link>
 				}
 			/>
-			<main className="flex flex-col flex-1 bg-gray-50">
+			<main className="flex flex-col flex-1">
 				{id && contact ? (
 					<>
 						<ContactForm {...contact} />
