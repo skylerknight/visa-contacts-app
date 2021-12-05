@@ -12,6 +12,22 @@ module.exports = {
 			colors: {
 				gray: colors.blueGray,
 			},
+			backgroundColor: {
+				primary: "var(--color-bg-primary)",
+				secondary: "var(--color-bg-secondary)",
+				"button-primary": "var(--color-button-bg-primary)",
+				"button-secondary": "var(--color-button-bg-secondary)",
+			},
+			textColor: {
+				primary: "var(--color-text-primary)",
+				secondary: "var(--color-text-secondary)",
+				"button-primary": "var(--color-button-text-primary)",
+				"button-secondary": "var(--color-button-text-secondary)",
+			},
+			borderColor: {
+				primary: "var(--color-border-primary)",
+				secondary: "var(--color-border-secondary)",
+			},
 		},
 	},
 	variants: {

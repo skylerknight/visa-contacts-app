@@ -1,0 +1,18 @@
+@layer base {
+  :root {
+    --color-bg-primary: #FFFFFF
+    --color-bg-secondary: #2176FF
+
+    --color-text-primary: #334155
+    --color-text-secondary: #64748B
+
+    --color-border-primary: #CBD5E1
+    --color-border-secondary: #94A3B8
+
+    --color-btn-bg-primary: #1D4ED8
+    --color-btn-text-primary: #FFFFFF
+
+    --color-btn-bg-secondary: #F1F5F9
+    --color-btn-text-secondary: #64748B
+  }
+}
