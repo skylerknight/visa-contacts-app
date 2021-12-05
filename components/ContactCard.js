@@ -25,8 +25,8 @@ const ContactCard = ({ id, email, firstName, lastName, phoneNumber }) => {
 				className={`flex flex-row items-center justify-center space-x-5 p-4 ${
 					isExpanded && "border-b"
 				}`}>
-				<div className="flex flex-col w-12 h-12 bg-default-contrast	">
-					<UserIcon className="w-6 h-6 m-auto text-default-contrast-foreground" />
+				<div className="flex flex-col w-12 h-12 border bg-default-contrast	text-default-contrast-foreground">
+					<UserIcon className="w-6 h-6 m-auto" />
 				</div>
 
 				<div className="flex-1">

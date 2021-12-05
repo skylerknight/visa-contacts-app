@@ -38,7 +38,7 @@ const ContactForm = ({ id, email, firstName, lastName, phoneNumber }) => {
 		<FormProvider {...methods}>
 			<form onSubmit={methods.handleSubmit(onSubmit)} className="flex flex-col space-y-8 w-full">
 				<div className="flex flex-row my-5">
-					<div className="w-24 h-24 flex flex-row m-auto rounded-full bg-secondary-contrast text-secondary-contrast-foreground">
+					<div className="w-24 h-24 flex flex-row m-auto bg-primary-contrast text-primary-contrast-foreground">
 						<UserIcon className="w-14 h-14 m-auto" />
 					</div>
 				</div>
@@ -54,10 +54,15 @@ const ContactForm = ({ id, email, firstName, lastName, phoneNumber }) => {
 				</div>
 				<div className="flex flex-row items-center justify-end space-x-5 pt-5">
 					{id != null && (
-						<button type="button" className="icon-btn-secondary mr-auto" onClick={onDelete}>
-							<TrashIcon className="w-5 h-5" />
+						<button type="button" className="btn-danger-contrast mr-auto" onClick={onDelete}>
+							<TrashIcon className="w-5 h-5" /> Delete
 						</button>
 					)}
+					<Link href="/">
+						<button type="submit" className="btn-default">
+							Cancel
+						</button>
+					</Link>
 					<button type="submit" className="btn-primary">
 						Save Contact
 					</button>

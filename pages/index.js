@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Head from "next/head";
 import Layout from "../components/Layout";
-import Footer from "../components/Footer";
 import Header from "../components/Header";
 import ContactList from "../components/ContactList";
 
@@ -17,7 +16,7 @@ export default function Home() {
 				title="All Contacts"
 				rightControl={
 					<Link href="/contact/new">
-						<button className="btn-primary">New Contact</button>
+						<button className="btn-info-contrast">New Contact</button>
 					</Link>
 				}
 			/>

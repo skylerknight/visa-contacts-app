@@ -2,7 +2,6 @@ import React from "react";
 import Link from "next/link";
 import Layout from "../../components/Layout";
 import Header from "../../components/Header";
-import Footer from "../../components/Footer";
 import ContactForm from "../../components/forms/ContactForm";
 
 import { useRouter } from "next/router";
@@ -27,7 +26,7 @@ const EditContactpage = () => {
 				title={`Update Contact`}
 				leftControl={
 					<Link href="/">
-						<button className="btn-secondary">
+						<button className="btn-default">
 							<ChevronLeftIcon className="w-5 h-5" />
 							Back
 						</button>
@@ -44,6 +43,7 @@ const EditContactpage = () => {
 						<p className="mb-5">No contact found</p>
 						<Link href="/">
 							<button type="button" className="btn-default">
+								<ChevronLeftIcon className="w-5 h-5" />
 								Back
 							</button>
 						</Link>
