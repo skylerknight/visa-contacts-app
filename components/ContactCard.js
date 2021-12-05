@@ -20,8 +20,8 @@ const ContactCard = ({ id, email, firstName, lastName, phoneNumber }) => {
 	};
 
 	return (
-		<article className="border border-default shadow-sm overflow-hidden" onClick={handleCardClick}>
-			<header className="flex flex-row items-center justify-center space-x-5 p-4">
+		<article className="border shadow-sm overflow-hidden" onClick={handleCardClick}>
+			<header className="flex flex-row items-center justify-center space-x-5 p-4 border-b">
 				<div className="flex flex-col w-12 h-12 rounded-full bg-default-light	">
 					<UserIcon className="w-6 h-6 m-auto text-default-foreground" />
 				</div>

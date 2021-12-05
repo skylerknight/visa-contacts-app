@@ -4,53 +4,66 @@
 
 @layer base {
 	:root {
-		/* Base Background */
+		/* Base Background Colors */
 		--color-base: #ffffff;
 		--color-card: #f8fafc;
 
-		/* Base Text */
+		/* Base Text Colors */
 		--color-heading: #334155;
 		--color-body: #64748b;
 
-		/* Base Colors */
+		/* Base Theme Colors */
 		--color-primary: #1d4ed8;
 		--color-primary-dark: #1e40af;
 		--color-primary-light: #2563eb;
 		--color-primary-foreground: #ffffff;
+
+		--color-primary-contrast: #eff6ff;
+		--color-primary-contrast-foreground: #1d4ed8;
 
 		--color-secondary: #fbbf24;
 		--color-secondary-dark: #f59e0b;
 		--color-secondary-light: #fcd34d;
 		--color-secondary-foreground: #334155;
 
+		--color-secondary-contrast: #fefce8;
+		--color-secondary-contrast-foreground: #92400e;
+
 		--color-default: #e2e8f0;
 		--color-default-dark: #cbd5e1;
 		--color-default-light: #f1f5f9;
 		--color-default-foreground: #475569;
 
-		/* Accent Colors  */
+		/* Accent Success */
 		--color-success: #047857;
 		--color-success-dark: #065f46;
-		--color-success-contrast: #ecfdf5;
 		--color-success-foreground: #ffffff;
+
+		--color-success-contrast: #ecfdf5;
 		--color-success-contrast-foreground: #047857;
 
+		/* Accent Warning */
 		--color-warning: #b45309;
 		--color-warning-dark: #92400e;
-		--color-warning-contrast: #fffbeb;
 		--color-warning-foreground: #ffffff;
+
+		--color-warning-contrast: #fffbeb;
 		--color-warning-contrast-foreground: #b45309;
 
+		/* Accent Danger */
 		--color-danger: #e11d48;
 		--color-danger-dark: #be123c;
-		--color-danger-contrast: #fff1f2;
 		--color-danger-foreground: #ffffff;
+
+		--color-danger-contrast: #fff1f2;
 		--color-danger-contrast-foreground: #e11d48;
 
+		/* Accent Info */
 		--color-info: #4338ca;
 		--color-info-dark: #3730a3;
-		--color-info-contrast: #eef2ff;
 		--color-info-foreground: #ffffff;
+
+		--color-info-contrast: #eef2ff;
 		--color-info-contrast-foreground: #4338ca;
 	}
 }
@@ -63,6 +76,12 @@
 	/* Base Text */
 	--color-heading: #f8fafc;
 	--color-body: #94a3b8;
+
+	--color-primary-contrast: #132555;
+	--color-primary-contrast-foreground: #60a5fa;
+
+	--color-secondary-contrast: #4a4128;
+	--color-secondary-contrast-foreground: #fbbf24;
 
 	--color-default: #475569;
 	--color-default-dark: #334155;
@@ -104,9 +123,11 @@ label {
 /* BUTTONS */
 /* ################################################## */
 
-.btn-primary,
-.btn-secondary,
 .btn-default,
+.btn-primary,
+.btn-primary-contrast,
+.btn-secondary,
+.btn-secondary-contrast,
 .btn-success,
 .btn-success-contrast,
 .btn-warning,
@@ -119,10 +140,21 @@ label {
 	@apply focus:outline-none focus:ring-2 focus:ring-offset-base focus:ring-offset-2;
 }
 
+.btn-default {
+	@apply bg-default ring-default text-default-foreground;
+	@apply hover:bg-default-light;
+	@apply focus:bg-default-dark;
+}
+
 .btn-primary {
 	@apply bg-primary ring-primary text-primary-foreground;
 	@apply hover:bg-primary-light;
 	@apply focus:bg-primary-light;
+}
+
+.btn-primary-contrast {
+	@apply bg-primary-contrast ring-primary text-primary-contrast-foreground;
+	@apply hover:bg-primary hover:text-primary-foreground;
 }
 
 .btn-secondary {
@@ -131,11 +163,12 @@ label {
 	@apply focus:bg-secondary-light;
 }
 
-.btn-default {
-	@apply bg-default ring-default text-default-foreground;
-	@apply hover:bg-default-light;
-	@apply focus:bg-default-dark;
+.btn-secondary-contrast {
+	@apply bg-secondary-contrast ring-secondary text-secondary-contrast-foreground;
+	@apply hover:bg-secondary hover:text-secondary-foreground;
 }
+
+/* Accent Buttons */
 
 .btn-success {
 	@apply bg-success ring-success text-success-foreground;

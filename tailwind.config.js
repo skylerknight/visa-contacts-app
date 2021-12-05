@@ -9,14 +9,6 @@ module.exports = {
 			sans: ["Poppins", "sans-serif"],
 		},
 		extend: {
-			// backgroundColor: {
-			// 	base: "var(--color-base)",
-			// 	card: "var(--color-card)",
-			// },
-			// textColor: {
-			// 	heading: "var(--color-heading)",
-			// 	body: "var(--color-body)",
-			// },
 			colors: {
 				neutral: colors.blueGray,
 				base: "var(--color-base)",
@@ -28,12 +20,20 @@ module.exports = {
 					dark: "var(--color-primary-dark)",
 					light: "var(--color-primary-light)",
 					foreground: "var(--color-primary-foreground)",
+					contrast: {
+						DEFAULT: "var(--color-primary-contrast)",
+						foreground: "var(--color-primary-contrast-foreground)",
+					},
 				},
 				secondary: {
 					DEFAULT: "var(--color-secondary)",
 					dark: "var(--color-secondary-dark)",
 					light: "var(--color-secondary-light)",
 					foreground: "var(--color-secondary-foreground)",
+					contrast: {
+						DEFAULT: "var(--color-secondary-contrast)",
+						foreground: "var(--color-secondary-contrast-foreground)",
+					},
 				},
 				default: {
 					DEFAULT: "var(--color-default)",
@@ -77,6 +77,12 @@ module.exports = {
 						foreground: "var(--color-info-contrast-foreground)",
 					},
 				},
+			},
+			borderColor: {
+				DEFAULT: "var(--color-default)",
+			},
+			textColor: {
+				DEFAULT: "var(--color-body)",
 			},
 		},
 	},
