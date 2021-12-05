@@ -17,7 +17,7 @@ export default function Home() {
 				title="All Contacts"
 				rightControl={
 					<Link href="/contact/new">
-						<button className="btn-primary">New Contact</button>
+						<button className="btn-success-contrast">New Contact</button>
 					</Link>
 				}
 			/>

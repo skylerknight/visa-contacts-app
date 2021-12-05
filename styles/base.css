@@ -6,27 +6,52 @@
 	:root {
 		/* Base Background */
 		--color-base: #ffffff;
-		--color-card: #f1f5f9;
+		--color-card: #f8fafc;
 
 		/* Base Text */
 		--color-heading: #334155;
 		--color-body: #64748b;
 
-		/* Accent Colors */
+		/* Base Colors */
 		--color-primary: #1d4ed8;
 		--color-primary-dark: #1e40af;
 		--color-primary-light: #2563eb;
-		--color-primary-text: #ffffff;
+		--color-primary-foreground: #ffffff;
 
 		--color-secondary: #fbbf24;
 		--color-secondary-dark: #f59e0b;
 		--color-secondary-light: #fcd34d;
-		--color-secondary-text: #334155;
+		--color-secondary-foreground: #334155;
 
 		--color-default: #e2e8f0;
 		--color-default-dark: #cbd5e1;
 		--color-default-light: #f1f5f9;
-		--color-default-text: #475569;
+		--color-default-foreground: #475569;
+
+		/* Accent Colors  */
+		--color-success: #047857;
+		--color-success-dark: #065f46;
+		--color-success-contrast: #ecfdf5;
+		--color-success-foreground: #ffffff;
+		--color-success-contrast-foreground: #047857;
+
+		--color-warning: #b45309;
+		--color-warning-dark: #92400e;
+		--color-warning-contrast: #fffbeb;
+		--color-warning-foreground: #ffffff;
+		--color-warning-contrast-foreground: #b45309;
+
+		--color-danger: #e11d48;
+		--color-danger-dark: #be123c;
+		--color-danger-contrast: #fff1f2;
+		--color-danger-foreground: #ffffff;
+		--color-danger-contrast-foreground: #e11d48;
+
+		--color-info: #4338ca;
+		--color-info-dark: #3730a3;
+		--color-info-contrast: #eef2ff;
+		--color-info-foreground: #ffffff;
+		--color-info-contrast-foreground: #4338ca;
 	}
 }
 
@@ -59,26 +84,160 @@ h6 {
 	@apply font-bold text-heading;
 }
 
+label {
+	@apply font-bold uppercase text-heading;
+}
+
+/* ################################################## */
+/* BUTTONS */
+/* ################################################## */
+
 .btn-primary,
 .btn-secondary,
-.btn-default {
+.btn-default,
+.btn-success,
+.btn-success-contrast,
+.btn-warning,
+.btn-warning-contrast,
+.btn-danger,
+.btn-danger-contrast,
+.btn-info,
+.btn-info-contrast {
 	@apply flex flex-row items-center justify-center px-4 py-2 gap-3 rounded-full;
+	@apply focus:outline-none focus:ring-2 focus:ring-offset-2;
 }
 
 .btn-primary {
-	@apply bg-primary text-primary;
-	@apply hover:bg-primary-light text-primary;
-	@apply focus:bg-primary-light text-primary;
+	@apply bg-primary ring-primary text-primary-foreground;
+	@apply hover:bg-primary-light;
+	@apply focus:bg-primary-light;
 }
 
 .btn-secondary {
-	@apply bg-secondary text-secondary;
-	@apply hover:bg-secondary-light text-secondary;
-	@apply focus:bg-secondary-light text-secondary;
+	@apply bg-secondary ring-secondary text-secondary-foreground;
+	@apply hover:bg-secondary-light;
+	@apply focus:bg-secondary-light;
 }
 
 .btn-default {
-	@apply border-2 border-default text-default;
-	@apply hover:bg-default-light text-default;
-	@apply focus:bg-default-dark text-default;
+	@apply bg-default ring-default text-default-foreground;
+	@apply hover:bg-default-light;
+	@apply focus:bg-default-dark;
+}
+
+.btn-success {
+	@apply bg-success ring-success text-success-foreground;
+	@apply hover:bg-success-dark hover:text-success-foreground;
+}
+
+.btn-success-contrast {
+	@apply bg-success-contrast ring-success text-success-contrast-foreground;
+	@apply hover:bg-success hover:text-success-foreground;
+}
+
+.btn-warning {
+	@apply bg-warning ring-warning text-warning-foreground;
+	@apply hover:bg-warning-dark hover:text-warning-foreground;
+}
+
+.btn-warning-contrast {
+	@apply bg-warning-contrast ring-warning text-warning-contrast-foreground;
+	@apply hover:bg-warning hover:text-warning-foreground;
+}
+
+.btn-danger {
+	@apply bg-danger ring-danger text-danger-foreground;
+	@apply hover:bg-danger-dark hover:text-danger-foreground;
+}
+
+.btn-danger-contrast {
+	@apply bg-danger-contrast ring-danger text-danger-contrast-foreground;
+	@apply hover:bg-danger hover:text-danger-foreground;
+}
+
+.btn-info {
+	@apply bg-info ring-info text-info-foreground;
+	@apply hover:bg-info-dark hover:text-info-foreground;
+}
+
+.btn-info-contrast {
+	@apply bg-info-contrast ring-info text-info-contrast-foreground;
+	@apply hover:bg-info hover:text-info-foreground;
+}
+
+/* ################################################## */
+/* ICON BUTTONS */
+/* ################################################## */
+
+.icon-btn-primary,
+.icon-btn-secondary,
+.icon-btn-default,
+.icon-btn-success,
+.icon-btn-success-contrast,
+.icon-btn-warning,
+.icon-btn-warning-contrast,
+.icon-btn-danger,
+.icon-btn-danger-contrast,
+.icon-btn-info,
+.icon-btn-info-contrast {
+	@apply w-10 h-10 flex flex-row items-center justify-center rounded-full;
+	@apply focus:outline-none focus:ring-2 focus:ring-offset-2;
+}
+
+.icon-btn-primary {
+	@apply bg-primary text-primary-foreground ring-primary;
+	@apply hover:bg-primary-light;
+	@apply focus:bg-primary;
+}
+
+.icon-btn-secondary {
+	@apply bg-secondary text-secondary-foreground ring-secondary;
+	@apply hover:bg-secondary-light;
+	@apply focus:bg-secondary;
+}
+
+.icon-btn-default {
+	@apply text-default-foreground ring-default;
+	@apply hover:bg-default-light;
+	@apply focus:bg-default;
+}
+
+.icon-btn-success {
+	@apply bg-success text-success-foreground ring-success;
+	@apply hover:bg-success-dark;
+}
+
+.icon-btn-success-contrast {
+	@apply bg-success-contrast text-success-contrast-foreground ring-success;
+	@apply hover:bg-success hover:text-success-foreground;
+}
+
+.icon-btn-warning {
+	@apply bg-warning text-warning-foreground ring-warning;
+	@apply hover:bg-warning-dark;
+}
+
+.icon-btn-warning-contrast {
+	@apply bg-warning-contrast text-warning-contrast-foreground ring-warning;
+	@apply hover:bg-warning hover:text-warning-foreground;
+}
+
+.icon-btn-danger {
+	@apply bg-danger text-danger-foreground ring-danger;
+	@apply hover:bg-danger-dark;
+}
+
+.icon-btn-danger-contrast {
+	@apply bg-danger-contrast text-danger-contrast-foreground ring-danger;
+	@apply hover:bg-danger hover:text-danger-foreground;
+}
+
+.icon-btn-info {
+	@apply bg-info text-info-foreground ring-info;
+	@apply hover:bg-info-dark;
+}
+
+.icon-btn-info-contrast {
+	@apply bg-info-contrast text-info-contrast-foreground ring-info;
+	@apply hover:bg-info hover:text-info-foreground;
 }

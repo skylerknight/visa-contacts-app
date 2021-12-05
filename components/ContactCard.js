@@ -20,21 +20,19 @@ const ContactCard = ({ id, email, firstName, lastName, phoneNumber }) => {
 	};
 
 	return (
-		<article
-			className="border border-secondary shadow-sm overflow-hidden bg-white"
-			onClick={handleCardClick}>
+		<article className="border border-default shadow-sm overflow-hidden" onClick={handleCardClick}>
 			<header className="flex flex-row items-center justify-center space-x-5 p-4 border-b">
-				<div className="flex flex-col w-12 h-12 rounded-full bg-blue-100">
-					<UserIcon className="w-6 h-6 m-auto text-blue-800" />
+				<div className="flex flex-col w-12 h-12 rounded-full bg-default-light	">
+					<UserIcon className="w-6 h-6 m-auto text-default-foreground" />
 				</div>
 
 				<div className="flex-1">
 					<h3 className={`font-bold ${isExpanded ? "text-lg" : "text-sm"}`}>
 						{firstName} {lastName}
 					</h3>
-					{!isExpanded && <p className="text-sm text-secondary mt-1">{phoneNumber}</p>}
+					{!isExpanded && <p className="text-sm mt-1">{phoneNumber}</p>}
 				</div>
-				<button className="icon-btn-secondary" onClick={handleCardClick}>
+				<button className="icon-btn-default" onClick={handleCardClick}>
 					{isExpanded ? (
 						<ChevronUpIcon className="w-5 h-5" />
 					) : (
@@ -59,11 +57,11 @@ const ContactCard = ({ id, email, firstName, lastName, phoneNumber }) => {
 						</li>
 					</ul>
 					<div className="w-full flex flex-row items-center justify-between p-4 space-x-5 border-t">
-						<button type="button" className="icon-btn-secondary">
+						<button type="button" className="icon-btn-default">
 							<TrashIcon className="w-5 h-5" />
 						</button>
 						<Link href={`/contact/${id}`}>
-							<button type="button" className="btn-secondary">
+							<button type="button" className="btn-default">
 								<PencilIcon className="w-4 h-4" />
 								Edit
 							</button>
