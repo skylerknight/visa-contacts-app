@@ -44,31 +44,31 @@
 		--color-success-dark: #065f46;
 		--color-success-foreground: #ffffff;
 
-		--color-success-contrast: #ecfdf5;
-		--color-success-contrast-foreground: #047857;
+		--color-success-contrast: #d1fae5;
+		--color-success-contrast-foreground: #065f46;
 
 		/* Accent Warning */
 		--color-warning: #b45309;
 		--color-warning-dark: #92400e;
 		--color-warning-foreground: #ffffff;
 
-		--color-warning-contrast: #fffbeb;
-		--color-warning-contrast-foreground: #b45309;
+		--color-warning-contrast: #ffedd5;
+		--color-warning-contrast-foreground: #c2410c;
 
 		/* Accent Danger */
 		--color-danger: #e11d48;
 		--color-danger-dark: #be123c;
 		--color-danger-foreground: #ffffff;
 
-		--color-danger-contrast: #fff1f2;
-		--color-danger-contrast-foreground: #e11d48;
+		--color-danger-contrast: #ffe4e6;
+		--color-danger-contrast-foreground: #be123c;
 
 		/* Accent Info */
 		--color-info: #4338ca;
 		--color-info-dark: #3730a3;
 		--color-info-foreground: #ffffff;
 
-		--color-info-contrast: #eef2ff;
+		--color-info-contrast: #e0e7ff;
 		--color-info-contrast-foreground: #4338ca;
 	}
 }
