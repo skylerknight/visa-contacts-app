@@ -1,9 +1,12 @@
 import React from "react";
 import VisaLogo from "./VisaLogo.js";
 
+import { useTheme } from "../contexts/theme";
+
 const Layout = ({ children }) => {
+	const { theme } = useTheme();
 	return (
-		<div className="theme-dark bg-base grid grid-cols-3 gap-5 h-screen">
+		<div className={`theme-${theme} bg-base grid grid-cols-3 gap-5 h-screen`}>
 			<div className="hidden lg:col-span-1 lg:flex flex-col bg-primary max-h-screen">
 				<div className="flex flex-col flex-1 items-center justify-center">
 					<VisaLogo />
