@@ -9,7 +9,6 @@ const Header = ({ leftControl, rightControl, title, centerTitle }) => {
 			</div>
 			<div className="px-5 mt-10 w-full max-w-screen-md mx-auto">
 				<h1 className={`text-xl font-bold ${centerTitle && "text-center"}`}>{title}</h1>
-				<p>The quick brown fox jumped over the lazy dog</p>
 			</div>
 		</header>
 	);

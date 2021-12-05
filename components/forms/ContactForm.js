@@ -7,7 +7,7 @@ import { useRouter } from "next/router";
 import { useContacts } from "../../contexts/contact";
 import { FormProvider, useForm } from "react-hook-form";
 
-import { TrashIcon } from "@heroicons/react/outline";
+import { TrashIcon, UserIcon } from "@heroicons/react/outline";
 
 const ContactForm = ({ id, email, firstName, lastName, phoneNumber }) => {
 	const methods = useForm();
@@ -38,7 +38,9 @@ const ContactForm = ({ id, email, firstName, lastName, phoneNumber }) => {
 		<FormProvider {...methods}>
 			<form onSubmit={methods.handleSubmit(onSubmit)} className="flex flex-col space-y-8 w-full">
 				<div className="flex flex-row my-5">
-					<div className="w-24 h-24 m-auto bg-blue-100 rounded-full"></div>
+					<div className="w-24 h-24 flex flex-row m-auto rounded-full bg-secondary-contrast text-secondary-contrast-foreground">
+						<UserIcon className="w-14 h-14 m-auto" />
+					</div>
 				</div>
 				<div className="flex flex-row space-x-5">
 					<ContactFormInput name="firstName" label="First Name" defaultValue={firstName} />

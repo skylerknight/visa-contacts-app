@@ -26,13 +26,16 @@
 		--color-secondary-light: #fcd34d;
 		--color-secondary-foreground: #334155;
 
-		--color-secondary-contrast: #fefce8;
+		--color-secondary-contrast: #fef3c7;
 		--color-secondary-contrast-foreground: #92400e;
 
 		--color-default: #e2e8f0;
 		--color-default-dark: #cbd5e1;
 		--color-default-light: #f1f5f9;
 		--color-default-foreground: #475569;
+
+		--color-default-contrast: #f8fafc;
+		--color-default-contrast-foreground: #64748b;
 
 		/* Accent Success */
 		--color-success: #047857;
@@ -88,6 +91,9 @@
 	--color-default-light: #64748b;
 	--color-default-foreground: #f8fafc;
 
+	--color-default-contrast: #1e293b;
+	--color-default-contrast-foreground: #94a3b8;
+
 	--color-success-contrast: #0c2f35;
 	--color-success-contrast-foreground: #6ee7b7;
 
@@ -117,6 +123,12 @@ h6 {
 
 label {
 	@apply font-bold uppercase text-heading;
+}
+
+input[type="text"] {
+	@apply block w-full pr-10 bg-base border-default-dark text-body placeholder-body;
+	@apply focus:outline-none focus:ring-primary focus:border-primary;
+	@apply sm:text-sm;
 }
 
 /* ################################################## */

@@ -40,6 +40,10 @@ module.exports = {
 					dark: "var(--color-default-dark)",
 					light: "var(--color-default-light)",
 					foreground: "var(--color-default-foreground)",
+					contrast: {
+						DEFAULT: "var(--color-default-contrast)",
+						foreground: "var(--color-default-contrast-foreground)",
+					},
 				},
 				success: {
 					DEFAULT: "var(--color-success)",

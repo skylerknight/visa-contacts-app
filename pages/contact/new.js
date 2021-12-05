@@ -15,7 +15,7 @@ const CreateContactPage = () => {
 				title="Create Contact"
 				leftControl={
 					<Link href="/">
-						<button className="btn-secondary">
+						<button className="btn-default">
 							<ChevronLeftIcon className="w-5 h-5" />
 							Back
 						</button>
@@ -25,7 +25,6 @@ const CreateContactPage = () => {
 			<main className="flex flex-col flex-1 w-full max-w-screen-sm m-auto">
 				<ContactForm />
 			</main>
-			<Footer />
 		</Layout>
 	);
 };
