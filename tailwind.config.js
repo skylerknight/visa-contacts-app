@@ -9,16 +9,20 @@ module.exports = {
 			sans: ["Poppins", "sans-serif"],
 		},
 		extend: {
-			backgroundColor: {
-				base: "var(--color-base)",
-				card: "var(--color-card)",
-			},
-			textColor: {
-				heading: "var(--color-heading)",
-				body: "var(--color-body)",
-			},
+			// backgroundColor: {
+			// 	base: "var(--color-base)",
+			// 	card: "var(--color-card)",
+			// },
+			// textColor: {
+			// 	heading: "var(--color-heading)",
+			// 	body: "var(--color-body)",
+			// },
 			colors: {
 				neutral: colors.blueGray,
+				base: "var(--color-base)",
+				card: "var(--color-card)",
+				heading: "var(--color-heading)",
+				body: "var(--color-body)",
 				primary: {
 					DEFAULT: "var(--color-primary)",
 					dark: "var(--color-primary-dark)",

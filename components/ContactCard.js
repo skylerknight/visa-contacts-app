@@ -21,7 +21,7 @@ const ContactCard = ({ id, email, firstName, lastName, phoneNumber }) => {
 
 	return (
 		<article className="border border-default shadow-sm overflow-hidden" onClick={handleCardClick}>
-			<header className="flex flex-row items-center justify-center space-x-5 p-4 border-b">
+			<header className="flex flex-row items-center justify-center space-x-5 p-4">
 				<div className="flex flex-col w-12 h-12 rounded-full bg-default-light	">
 					<UserIcon className="w-6 h-6 m-auto text-default-foreground" />
 				</div>
@@ -56,8 +56,8 @@ const ContactCard = ({ id, email, firstName, lastName, phoneNumber }) => {
 							</div>
 						</li>
 					</ul>
-					<div className="w-full flex flex-row items-center justify-between p-4 space-x-5 border-t">
-						<button type="button" className="icon-btn-default">
+					<div className="w-full flex flex-row items-center justify-between p-4 space-x-5 border-t border-default">
+						<button type="button" className="icon-btn-danger-contrast">
 							<TrashIcon className="w-5 h-5" />
 						</button>
 						<Link href={`/contact/${id}`}>

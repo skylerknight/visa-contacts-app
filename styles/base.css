@@ -67,12 +67,24 @@
 	--color-default: #475569;
 	--color-default-dark: #334155;
 	--color-default-light: #64748b;
-	--color-default-text: #f8fafc;
+	--color-default-foreground: #f8fafc;
+
+	--color-success-contrast: #0c2f35;
+	--color-success-contrast-foreground: #6ee7b7;
+
+	--color-warning-contrast: #382622;
+	--color-warning-contrast-foreground: #fcd34d;
+
+	--color-danger-contrast: #431831;
+	--color-danger-contrast-foreground: #fda4af;
+
+	--color-info-contrast: #1c1f52;
+	--color-info-contrast-foreground: #a5b4fc;
 }
 
 html,
 body {
-	@apply text-body;
+	@apply bg-base text-body;
 }
 
 h1,
@@ -104,7 +116,7 @@ label {
 .btn-info,
 .btn-info-contrast {
 	@apply flex flex-row items-center justify-center px-4 py-2 gap-3 rounded-full;
-	@apply focus:outline-none focus:ring-2 focus:ring-offset-2;
+	@apply focus:outline-none focus:ring-2 focus:ring-offset-base focus:ring-offset-2;
 }
 
 .btn-primary {
@@ -181,7 +193,7 @@ label {
 .icon-btn-info,
 .icon-btn-info-contrast {
 	@apply w-10 h-10 flex flex-row items-center justify-center rounded-full;
-	@apply focus:outline-none focus:ring-2 focus:ring-offset-2;
+	@apply focus:outline-none focus:ring-2 focus:ring-offset-base focus:ring-offset-2;
 }
 
 .icon-btn-primary {
