@@ -21,7 +21,7 @@ const ContactFormInput = ({ name, label, defaultValue }) => {
 					{...register(name, { required: true })}
 				/>
 				{errors.firstName && (
-					<p className="text-xs font-bold text-red-500">This field is required</p>
+					<p className="text-xs font-bold text-danger">This field is required</p>
 				)}
 			</div>
 		</div>
