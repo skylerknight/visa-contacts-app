@@ -9,8 +9,10 @@ const ContactFormInput = ({ name, label, defaultValue }) => {
 
 	return (
 		<div className="flex-1">
-			<label htmlFor={name}>{label}</label>
-			<div className="mt-3">
+			<label htmlFor={name} className="text-xs">
+				{label}
+			</label>
+			<div className="mt-2">
 				<input
 					id={name}
 					name={name}
@@ -21,7 +23,9 @@ const ContactFormInput = ({ name, label, defaultValue }) => {
 					{...register(name, { required: true })}
 				/>
 				{errors.firstName && (
-					<p className="text-xs font-bold text-danger">This field is required</p>
+					<p className="text-xs p-2 mt-1 text-center bg-warning-contrast text-warning-contrast-foreground">
+						This field is required
+					</p>
 				)}
 			</div>
 		</div>
