@@ -4,9 +4,6 @@ import Layout from "../components/Layout";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import ContactList from "../components/ContactList";
-import Button from "../components/Button";
-
-import { UserIcon } from "@heroicons/react/outline";
 
 export default function Home() {
 	return (

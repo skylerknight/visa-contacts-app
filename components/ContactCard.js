@@ -64,8 +64,8 @@ const ContactCard = ({ id, email, firstName, lastName, phoneNumber }) => {
 						</button>
 						<Link href={`/contact/${id}`}>
 							<button type="button" className="btn-secondary">
-								Edit
 								<PencilIcon className="w-4 h-4" />
+								Edit
 							</button>
 						</Link>
 					</div>
