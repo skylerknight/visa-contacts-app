@@ -29,10 +29,8 @@ const ContactForm = ({ id, email, firstName, lastName, phoneNumber }) => {
 
 	return (
 		<FormProvider {...methods}>
-			<form
-				onSubmit={methods.handleSubmit(onSubmit)}
-				className="flex flex-col space-y-8 p-10 w-full">
-				<div className="flex flex-row mb-5">
+			<form onSubmit={methods.handleSubmit(onSubmit)} className="flex flex-col space-y-8 w-full">
+				<div className="flex flex-row my-5">
 					<div className="w-24 h-24 m-auto bg-blue-100 rounded-full"></div>
 				</div>
 				<div className="flex flex-row space-x-5">
@@ -50,14 +48,14 @@ const ContactForm = ({ id, email, firstName, lastName, phoneNumber }) => {
 						<button
 							type="button"
 							onClick={null}
-							className="w-full flex justify-center py-3 px-4  border border-transparent shadow-sm text-sm font-medium text-gray-800 bg-gray-200 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300">
+							className="w-full flex justify-center py-3 px-4 border shadow-sm text-sm font-medium text-gray-800 bg-gray-200 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300">
 							Cancel
 						</button>
 					</Link>
 					<button
 						type="submit"
 						className="w-full flex justify-center py-3 px-4  border border-transparent shadow-sm text-sm font-medium text-white bg-blue-800 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-800">
-						{id == null ? "Save" : "Create"}
+						Save
 					</button>
 				</div>
 			</form>

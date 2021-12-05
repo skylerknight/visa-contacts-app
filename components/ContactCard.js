@@ -34,11 +34,9 @@ const ContactCard = ({ id, email, firstName, lastName, phoneNumber }) => {
 							<li className="text-sm text-gray-400">{phoneNumber}</li>
 						</ul>
 					</div>
-					<Link href={`/contact/${id}`}>
-						<a className="flex w-8 h-8">
-							<ChevronDownIcon className="w-5 h-5 m-auto" />
-						</a>
-					</Link>
+					<button className="flex w-8 h-8" onClick={handleCardClick}>
+						<ChevronDownIcon className="w-5 h-5 m-auto" />
+					</button>
 				</header>
 			) : (
 				<div className="flex flex-col">
@@ -79,8 +77,8 @@ const ContactCard = ({ id, email, firstName, lastName, phoneNumber }) => {
 							<TrashIcon className="w-5 h-5" />
 						</button>
 						<Link href={`/contact/${id}`}>
-							<button className="px-4 py-2 border flex flex-row items-center justify-center text-sm">
-								<PencilIcon className="w-5 h-5 mr-3" /> Edit
+							<button className="px-4 py-2 flex flex-row items-center justify-center text-sm bg-gray-100">
+								<PencilIcon className="w-4 h-4 mr-3" /> Edit
 							</button>
 						</Link>
 					</div>
