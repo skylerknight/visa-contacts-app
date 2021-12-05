@@ -9,21 +9,19 @@ const ContactFormInput = ({ name, label, defaultValue }) => {
 
 	return (
 		<div className="flex-1">
-			<label htmlFor={name} className="block text-xs font-bold uppercase text-[#242424]">
-				{label}
-			</label>
+			<label htmlFor={name}>{label}</label>
 			<div className="mt-3">
 				<input
 					id={name}
 					name={name}
-					type={name}
+					type="text"
 					autoComplete={name}
 					defaultValue={defaultValue || ""}
+					aria-describedby={`${name}-description`}
 					{...register(name, { required: true })}
-					className="appearance-none block w-full p-3 border border-gray-300 shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-800 focus:border-blue-800 sm:text-sm"
 				/>
 				{errors.firstName && (
-					<p className="text-sm font-bold text-red-500">This field is required</p>
+					<p className="text-xs font-bold text-red-500">This field is required</p>
 				)}
 			</div>
 		</div>

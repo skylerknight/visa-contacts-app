@@ -4,14 +4,22 @@
 
 @layer base {
 	:root {
+		--color-primary-foreground: #ffffff;
+		--color-success-foreground: #ffe4e6;
+		--color-warning-foreground: #f59e0b;
+		--color-error-foreground: #e11d48;
+
 		--color-bg-primary: #ffffff;
 		--color-bg-secondary: #2176ff;
 
 		--color-text-primary: #334155;
 		--color-text-secondary: #64748b;
 
-		--color-border-primary: #cbd5e1;
-		--color-border-secondary: #94a3b8;
+		--color-border-primary: #1d4ed8;
+		--color-border-secondary: #c9d5e2;
+
+		--color-ring-primary: #1d4ed8;
+		--color-ring-secondary: #e2e8f0;
 
 		--color-button-bg-primary: #1d4ed8;
 		--color-button-bg-primary-hover: #2563eb;
@@ -20,24 +28,76 @@
 		--color-button-bg-secondary: #e2e8f0;
 		--color-button-bg-secondary-hover: #c9d5e2;
 		--color-button-text-secondary: #334155;
+
+		--color-icon-primary: #1d4ed8;
+		--color-icon-bg-primary: #dbeafe;
+
+		--color-icon-secondary: #334155;
+		--color-icon-bg-secondary: #e2e8f0;
 	}
 }
 
-.btn-primary {
-	@apply flex justify-center px-4 py-2 gap-2 border border-transparent text-sm font-semibold bg-button-primary text-button-primary;
-	@apply hover:bg-button-primary-hover hover:text-button-primary;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	@apply font-bold text-primary;
+}
+
+html,
+body {
+	@apply text-secondary;
+}
+
+.btn-primary,
+.btn-secondary,
+.btn-success,
+.btn-warning,
+.btn-error {
+	@apply flex items-center justify-center px-3 py-2 gap-3 border border-transparent text-sm font-semibold;
 	@apply focus:outline-none focus:ring-2 focus:ring-offset-2;
+}
+
+.btn-primary {
+	@apply bg-button-primary text-button-primary;
+	@apply hover:bg-button-primary-hover hover:text-button-primary;
+	@apply focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-button-primary;
 }
 
 .btn-secondary {
-	@apply flex justify-center px-4 py-2 gap-2 border border-transparent text-sm font-semibold bg-button-secondary text-button-secondary;
-	@apply hover:bg-button-secondary-hover hover:text-button-secondary;
+	@apply bg-button-secondary text-button-secondary;
+	@apply hover:bg-button-secondary hover:text-button-secondary;
+	@apply focus:ring-button-secondary;
+}
+
+[class*="icon-btn-"] {
+	@apply w-8 h-8 flex flex-row items-center justify-center rounded-full;
 	@apply focus:outline-none focus:ring-2 focus:ring-offset-2;
 }
 
-.btn-with-icon-right {
-	@apply flex-row-reverse;
+.icon-btn-primary {
+	@apply text-icon-primary;
+	@apply hover:bg-icon-primary;
+	@apply focus:bg-icon-primary focus:ring-icon-primary;
 }
-.btn-with-icon-left {
-	@apply flex-row;
+
+.icon-btn-secondary {
+	@apply text-icon-secondary;
+	@apply hover:bg-icon-secondary;
+	@apply focus:bg-icon-secondary focus:ring-icon-secondary;
+}
+
+/* FORM */
+/* ################# */
+input[type="text"] {
+	@apply border border-secondary;
+	@apply appearance-none block w-full p-3 shadow-sm;
+	@apply focus:outline-none focus:ring-primary focus:border-primary;
+
+	@apply sm:text-sm;
+}
+label {
+	@apply block font-bold uppercase text-sm text-primary;
 }

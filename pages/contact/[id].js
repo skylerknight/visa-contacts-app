@@ -7,7 +7,7 @@ import ContactForm from "../../components/forms/ContactForm";
 
 import { useRouter } from "next/router";
 import { useContacts } from "../../contexts/contact";
-import { ChevronLeftIcon, TrashIcon } from "@heroicons/react/solid";
+import { ChevronLeftIcon, TrashIcon } from "@heroicons/react/outline";
 
 const EditContactpage = () => {
 	const router = useRouter();
@@ -18,7 +18,6 @@ const EditContactpage = () => {
 	React.useEffect(() => {
 		if (id == null) return;
 		setContact(contacts.find((contact) => contact.id === id) || null);
-		console.log(contact);
 	}, [contacts, id]);
 
 	return (
@@ -28,22 +27,14 @@ const EditContactpage = () => {
 				title={`Update Contact`}
 				leftControl={
 					<Link href="/">
-						<button className="flex flex-row items-center border px-3 py-2 text-sm font-bold">
-							<ChevronLeftIcon className="w-5 h-5 mr-2" />
+						<button className="btn-secondary">
+							<ChevronLeftIcon className="w-5 h-5" />
 							Back
 						</button>
 					</Link>
 				}
-				rightControl={
-					<Link href="/">
-						<button className="flex flex-row items-center border border-red-500 text-red-500 px-3 py-2 text-sm font-bold">
-							<TrashIcon className="w-4 h-4 mr-2" />
-							Delete
-						</button>
-					</Link>
-				}
 			/>
-			<main className="flex flex-col flex-1 w-full max-w-screen-md m-auto">
+			<main className="flex flex-col flex-1 w-full max-w-screen-sm m-auto">
 				{id && contact ? (
 					<>
 						<ContactForm {...contact} />

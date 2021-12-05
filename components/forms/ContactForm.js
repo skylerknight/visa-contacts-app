@@ -7,6 +7,8 @@ import { useRouter } from "next/router";
 import { useContacts } from "../../contexts/contact";
 import { FormProvider, useForm } from "react-hook-form";
 
+import { TrashIcon } from "@heroicons/react/outline";
+
 const ContactForm = ({ id, email, firstName, lastName, phoneNumber }) => {
 	const methods = useForm();
 	const router = useRouter();
@@ -27,6 +29,11 @@ const ContactForm = ({ id, email, firstName, lastName, phoneNumber }) => {
 		router.push("/");
 	};
 
+	const onDelete = () => {
+		contactsDispatch({ type: "DELETE_CONTACT", payload: id });
+		router.push("/");
+	};
+
 	return (
 		<FormProvider {...methods}>
 			<form onSubmit={methods.handleSubmit(onSubmit)} className="flex flex-col space-y-8 w-full">
@@ -43,19 +50,14 @@ const ContactForm = ({ id, email, firstName, lastName, phoneNumber }) => {
 				<div>
 					<ContactFormInput name="email" label="Email Address" defaultValue={email} />
 				</div>
-				<div className="flex flex-row space-x-5 pt-5">
-					<Link href="/">
-						<button
-							type="button"
-							onClick={null}
-							className="w-full flex justify-center py-3 px-4 border shadow-sm text-sm font-medium text-gray-800 bg-gray-200 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300">
-							Cancel
+				<div className="flex flex-row items-center justify-end space-x-5 pt-5">
+					{id != null && (
+						<button type="button" className="icon-btn-secondary mr-auto" onClick={onDelete}>
+							<TrashIcon className="w-5 h-5" />
 						</button>
-					</Link>
-					<button
-						type="submit"
-						className="w-full flex justify-center py-3 px-4  border border-transparent shadow-sm text-sm font-medium text-white bg-blue-800 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-800">
-						Save
+					)}
+					<button type="submit" className="btn-primary">
+						Save Contact
 					</button>
 				</div>
 			</form>

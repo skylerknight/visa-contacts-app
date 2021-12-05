@@ -15,14 +15,14 @@ const CreateContactPage = () => {
 				title="Create Contact"
 				leftControl={
 					<Link href="/">
-						<button className="flex flex-row items-center border px-3 py-2  text-sm font-bold">
-							<ChevronLeftIcon className="w-5 h-5 mr-2" />
+						<button className="btn-secondary">
+							<ChevronLeftIcon className="w-5 h-5" />
 							Back
 						</button>
 					</Link>
 				}
 			/>
-			<main className="flex flex-col flex-1 w-full max-w-screen-md m-auto">
+			<main className="flex flex-col flex-1 w-full max-w-screen-sm m-auto">
 				<ContactForm />
 			</main>
 			<Footer />
