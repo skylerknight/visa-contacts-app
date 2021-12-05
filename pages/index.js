@@ -4,8 +4,10 @@ import Layout from "../components/Layout";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import ContactList from "../components/ContactList";
+import Button from "../components/Button";
 
-import { PlusCircleIcon } from "@heroicons/react/solid";
+import { UserIcon } from "@heroicons/react/outline";
+
 export default function Home() {
 	return (
 		<Layout>
@@ -18,9 +20,9 @@ export default function Home() {
 				title="All Contacts"
 				rightControl={
 					<Link href="/contact/new">
-						<button className="flex flex-row items-center border px-3 py-2  text-sm font-bold bg-blue-800 text-white">
+						<Button variant="primary" icon={<UserIcon className="w-5 h-5" />} iconPosition="right">
 							New Contact
-						</button>
+						</Button>
 					</Link>
 				}
 			/>

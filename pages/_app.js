@@ -1,7 +1,7 @@
 import "@fontsource/poppins";
 import "@fontsource/poppins/500.css";
 
-import "tailwindcss/tailwind.css";
+import "../styles/base.css";
 import ContactsProvider from "../contexts/contact";
 
 function MyApp({ Component, pageProps }) {

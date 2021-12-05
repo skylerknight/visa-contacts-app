@@ -1,18 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @layer base {
-  :root {
-    --color-bg-primary: #FFFFFF
-    --color-bg-secondary: #2176FF
+	:root {
+		--color-bg-primary: #ffffff;
+		--color-bg-secondary: #2176ff;
 
-    --color-text-primary: #334155
-    --color-text-secondary: #64748B
+		--color-text-primary: #334155;
+		--color-text-secondary: #64748b;
 
-    --color-border-primary: #CBD5E1
-    --color-border-secondary: #94A3B8
+		--color-border-primary: #cbd5e1;
+		--color-border-secondary: #94a3b8;
 
-    --color-btn-bg-primary: #1D4ED8
-    --color-btn-text-primary: #FFFFFF
+		--color-button-bg-primary: #1d4ed8;
+		--color-button-bg-primary-hover: #2563eb;
+		--color-button-text-primary: #ffffff;
 
-    --color-btn-bg-secondary: #F1F5F9
-    --color-btn-text-secondary: #64748B
-  }
+		--color-button-bg-secondary: #e2e8f0;
+		--color-button-bg-secondary-hover: #c9d5e2;
+		--color-button-text-secondary: #334155;
+	}
+}
+
+.btn-primary {
+	@apply flex justify-center px-4 py-2 gap-2 border border-transparent text-sm font-semibold bg-button-primary text-button-primary;
+	@apply hover:bg-button-primary-hover hover:text-button-primary;
+	@apply focus:outline-none focus:ring-2 focus:ring-offset-2;
+}
+
+.btn-secondary {
+	@apply flex justify-center px-4 py-2 gap-2 border border-transparent text-sm font-semibold bg-button-secondary text-button-secondary;
+	@apply hover:bg-button-secondary-hover hover:text-button-secondary;
+	@apply focus:outline-none focus:ring-2 focus:ring-offset-2;
+}
+
+.btn-with-icon-right {
+	@apply flex-row-reverse;
+}
+.btn-with-icon-left {
+	@apply flex-row;
 }

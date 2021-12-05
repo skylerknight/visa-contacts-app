@@ -1,7 +1,7 @@
 const colors = require("tailwindcss/colors");
 
 module.exports = {
-	mode: "jit",
+	// mode: "jit",
 	purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
 	darkMode: false, // or 'media' or 'class'
 	theme: {
@@ -17,6 +17,8 @@ module.exports = {
 				secondary: "var(--color-bg-secondary)",
 				"button-primary": "var(--color-button-bg-primary)",
 				"button-secondary": "var(--color-button-bg-secondary)",
+				"button-primary-hover": "var(--color-button-bg-primary-hover)",
+				"button-secondary-hover": "var(--color-button-bg-secondary-hover)",
 			},
 			textColor: {
 				primary: "var(--color-text-primary)",
