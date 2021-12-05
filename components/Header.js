@@ -2,7 +2,7 @@ import React from "react";
 
 const Header = ({ leftControl, rightControl, title, centerTitle }) => {
 	return (
-		<header className="flex flex-col relative p-5">
+		<header className="flex flex-col relative pb-5 lg:p-5">
 			<div className="flex flex-row items-center justify-between">
 				<div className="mr-auto">{leftControl}</div>
 				<div className="ml-auto">{rightControl}</div>

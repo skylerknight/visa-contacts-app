@@ -42,7 +42,7 @@ const ContactForm = ({ id, email, firstName, lastName, phoneNumber }) => {
 						<UserIcon className="w-14 h-14 m-auto" />
 					</div>
 				</div>
-				<div className="flex flex-row space-x-5">
+				<div className="flex flex-col space-y-8 sm:flex-row sm:space-x-5 sm:space-y-0">
 					<ContactFormInput name="firstName" label="First Name" defaultValue={firstName} />
 					<ContactFormInput name="lastName" label="Last Name" defaultValue={lastName} />
 				</div>
