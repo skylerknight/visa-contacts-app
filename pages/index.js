@@ -1,8 +1,8 @@
-import Link from "next/link";
 import Head from "next/head";
 import Layout from "../components/Layout";
 import Header from "../components/Header";
-import Button from "../components/Button";
+import Button from "../components/buttons/Button";
+import IconButton from "../components/buttons/IconButton";
 import ContactList from "../components/ContactList";
 
 import { useTheme } from "../contexts/theme";
@@ -20,9 +20,9 @@ export default function Home() {
 			<Header
 				title="All Contacts"
 				leftControls={
-					<button className="icon-btn-default" onClick={() => toggleTheme()}>
+					<IconButton variant="default" onClick={toggleTheme}>
 						{theme === "dark" ? <SunIcon className="w-5 h-5" /> : <MoonIcon className="w-5 h-5" />}
-					</button>
+					</IconButton>
 				}
 				rightControls={
 					<Button href="/contact/new" variant="primary">

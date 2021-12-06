@@ -1,17 +1,18 @@
 import React from "react";
 import Link from "next/link";
 
-const Button = ({ children, type, variant, href }) => {
+const Button = (props) => {
+	const { children, type, variant, href } = props;
 	const setVariant = () => (variant ? `btn-${variant}` : "btn-primary");
 
 	return href ? (
 		<Link href={href}>
-			<a role="button" className={`${setVariant(variant)}`}>
+			<a role="button" className={`${setVariant(variant)}`} {...props}>
 				{children}
 			</a>
 		</Link>
 	) : (
-		<button type={type || "button"} className={`${setVariant(variant)}`}>
+		<button type={type || "button"} className={`${setVariant(variant)}`} {...props}>
 			{children}
 		</button>
 	);

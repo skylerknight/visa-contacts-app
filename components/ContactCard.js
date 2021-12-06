@@ -1,6 +1,6 @@
 import React from "react";
-import Link from "next/link";
-import Button from "./Button";
+import Button from "./buttons/Button";
+import IconButton from "./buttons/IconButton";
 import { formatPhoneNumber } from "../helpers";
 import { useContacts } from "../contexts/contact";
 
@@ -45,7 +45,7 @@ const ContactCard = ({ id, email, firstName, lastName, phoneNumber }) => {
 				</button>
 			</header>
 			{isExpanded && (
-				<div className="flex flex-col">
+				<div className="flex flex-col" onClick={(e) => e.stopPropagation()}>
 					<div className="flex flex-col space-y-5 p-5">
 						<h3 className="mb-2 text-xs">Phone Number</h3>
 						{formatPhoneNumber(phoneNumber)}
@@ -53,12 +53,11 @@ const ContactCard = ({ id, email, firstName, lastName, phoneNumber }) => {
 						{email}
 					</div>
 					<div className="w-full flex flex-row items-center justify-between p-4 space-x-5 border-t border-default">
-						<button
-							type="button"
-							className="icon-btn-danger-contrast"
+						<IconButton
+							variant="danger-contrast"
 							onClick={() => contactsDispatch({ type: "DELETE_CONTACT", payload: id })}>
 							<TrashIcon className="w-5 h-5" />
-						</button>
+						</IconButton>
 						<Button href={`/contact/${id}`} variant="default">
 							<PencilIcon className="w-4 h-4" />
 							Edit
