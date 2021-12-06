@@ -31,6 +31,17 @@ const EditContactpage = () => {
 						Back
 					</Button>
 				}
+				rightControls={
+					id != null && (
+						<Button
+							full
+							variant="danger-contrast"
+							aria-label="Delete Contact"
+							onClick={() => confirmAndDelete(id)}>
+							<TrashIcon className="w-5 h-5" /> Delete
+						</Button>
+					)
+				}
 			/>
 			<main className="flex flex-col flex-1 w-full max-w-screen-sm m-auto">
 				{id && contact ? (

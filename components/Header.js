@@ -5,7 +5,7 @@ const Header = ({ leftControls, rightControls, title, centerTitle }) => {
 		<header className="flex flex-col relative pb-5 lg:p-5">
 			<nav
 				role="navigaiton"
-				className="flex flex-row items-center justify-between"
+				className="flex flex-row items-center justify-between w-full mx-auto max-w-screen-md lg:max-w-full"
 				aria-label="Main Menu">
 				<div>{leftControls}</div>
 				<div>{rightControls}</div>

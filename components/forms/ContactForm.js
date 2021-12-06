@@ -38,7 +38,7 @@ const ContactForm = ({ id, email, firstName, lastName, phoneNumber }) => {
 				aria-label="Contact Information"
 				className="flex flex-col space-y-5 w-full lg:space-y-8">
 				<div className="flex flex-row my-5">
-					<div className="w-24 h-24 flex flex-row m-auto bg-primary-contrast text-primary-contrast-foreground">
+					<div className="w-24 h-24 flex flex-row m-auto rounded-lg bg-primary-contrast text-primary-contrast-foreground">
 						<UserIcon className="w-14 h-14 m-auto" />
 					</div>
 				</div>
@@ -57,18 +57,13 @@ const ContactForm = ({ id, email, firstName, lastName, phoneNumber }) => {
 				<div>
 					<ContactFormInput type="email" name="email" label="Email Address" defaultValue={email} />
 				</div>
-				<div className="flex flex-row items-center justify-end pt-2.5">
-					{id != null && (
-						<Button variant="danger-contrast" onClick={() => confirmAndDelete(id)}>
-							<TrashIcon className="w-5 h-5" /> Delete
-						</Button>
-					)}
-					<div className="flex flex-row space-x-5  ml-auto">
-						<Button variant="default" href="/">
-							Cancel
-						</Button>
-						<Button variant="primary">Save Contact</Button>
-					</div>
+				<div className="grid grid-cols-2 gap-5 pt-2.5">
+					<Button full variant="default" href="/">
+						Cancel
+					</Button>
+					<Button full variant="primary" aria-label="Save Contact Information">
+						Save Contact
+					</Button>
 				</div>
 			</form>
 		</FormProvider>

@@ -159,7 +159,7 @@ input[type="time"],
 input[type="url"],
 input[type="week"],
 textarea {
-	@apply block w-full pr-10 bg-base border-default-dark text-body placeholder-body;
+	@apply block w-full pr-10 bg-base border-default-dark text-body placeholder-body rounded-md;
 	@apply focus:outline-none focus:ring-primary focus:border-primary;
 	@apply sm:text-sm;
 }
@@ -181,7 +181,7 @@ textarea {
 .btn-danger-contrast,
 .btn-info,
 .btn-info-contrast {
-	@apply flex flex-row items-center justify-center px-4 py-2 gap-3;
+	@apply flex flex-row items-center justify-center px-4 py-2 gap-3 rounded-md;
 	@apply focus:outline-none focus:ring-2 focus:ring-offset-base focus:ring-offset-2;
 }
 

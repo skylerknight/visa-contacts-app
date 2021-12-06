@@ -20,7 +20,7 @@ const ContactCard = ({ index, id, email, firstName, lastName, phoneNumber }) => 
 	};
 
 	return (
-		<li className="border shadow-sm overflow-hidden">
+		<li className="border shadow-sm rounded-lg overflow-hidden">
 			<h3 className={isExpanded ? "border-b" : undefined}>
 				<button
 					onClick={handleCardClick}
@@ -28,7 +28,7 @@ const ContactCard = ({ index, id, email, firstName, lastName, phoneNumber }) => 
 					aria-expanded={isExpanded}
 					aria-controls={`contact-accordion-panel-${id}`}
 					className="flex flex-row items-center space-x-5 p-4 pr-6 w-full">
-					<div className="flex flex-col w-12 h-12 border bg-default-contrast	text-default-contrast-foreground">
+					<div className="flex flex-col w-12 h-12 rounded-lg border bg-default-contrast text-default-contrast-foreground">
 						<UserIcon className="w-6 h-6 m-auto" />
 					</div>
 					<div className="block flex-1 text-left">
