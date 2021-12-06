@@ -24,7 +24,7 @@ const EditContactpage = () => {
 			<Header
 				centerTitle
 				title={`Update Contact`}
-				leftControl={
+				leftControls={
 					<Link href="/">
 						<button className="btn-default">
 							<ChevronLeftIcon className="w-5 h-5" />

@@ -1,18 +1,19 @@
 import React from "react";
 import Link from "next/link";
-import Button from "../components/Button";
+import Button from "./Button";
+import { formatPhoneNumber } from "../helpers";
+import { useContacts } from "../contexts/contact";
 
 import {
 	ChevronDownIcon,
 	ChevronUpIcon,
 	PencilIcon,
-	PhoneIcon,
 	TrashIcon,
-	MailIcon,
 	UserIcon,
 } from "@heroicons/react/outline";
 
 const ContactCard = ({ id, email, firstName, lastName, phoneNumber }) => {
+	const { contactsDispatch } = useContacts();
 	const [isExpanded, setIsExpanded] = React.useState(false);
 
 	const handleCardClick = () => {
@@ -30,10 +31,10 @@ const ContactCard = ({ id, email, firstName, lastName, phoneNumber }) => {
 				</div>
 
 				<div className="flex-1">
-					<h3 className={`font-bold ${isExpanded ? "text-lg" : "text-sm"}`}>
+					<h2 className={`${isExpanded ? "text-lg" : "text-sm"}`}>
 						{firstName} {lastName}
-					</h3>
-					{!isExpanded && <p className="text-sm mt-1">{phoneNumber}</p>}
+					</h2>
+					{!isExpanded && <p className="text-sm mt-1">{formatPhoneNumber(phoneNumber)}</p>}
 				</div>
 				<button className="icon-btn-default" onClick={handleCardClick}>
 					{isExpanded ? (
@@ -45,30 +46,23 @@ const ContactCard = ({ id, email, firstName, lastName, phoneNumber }) => {
 			</header>
 			{isExpanded && (
 				<div className="flex flex-col">
-					<ul className="px-6 py-5 space-y-5">
-						<li className="text-sm flex flex-row items-center justify-between">
-							<div className="flex flex-col">
-								<label className="mb-2 text-xs">Phone Number</label>
-								{phoneNumber}
-							</div>
-						</li>
-						<li className="text-sm flex flex-row items-center justify-between">
-							<div className="flex flex-col">
-								<label className="mb-2 text-xs">Email Address</label>
-								{email}
-							</div>
-						</li>
-					</ul>
+					<div className="flex flex-col space-y-5 p-5">
+						<h3 className="mb-2 text-xs">Phone Number</h3>
+						{formatPhoneNumber(phoneNumber)}
+						<h3 className="mb-2 text-xs">Email Address</h3>
+						{email}
+					</div>
 					<div className="w-full flex flex-row items-center justify-between p-4 space-x-5 border-t border-default">
-						<button type="button" className="icon-btn-danger-contrast">
+						<button
+							type="button"
+							className="icon-btn-danger-contrast"
+							onClick={() => contactsDispatch({ type: "DELETE_CONTACT", payload: id })}>
 							<TrashIcon className="w-5 h-5" />
 						</button>
-						<Link href={`/contact/${id}`}>
-							<button type="button" className="btn-default">
-								<PencilIcon className="w-4 h-4" />
-								Edit
-							</button>
-						</Link>
+						<Button href={`/contact/${id}`} variant="default">
+							<PencilIcon className="w-4 h-4" />
+							Edit
+						</Button>
 					</div>
 				</div>
 			)}

@@ -109,6 +109,10 @@
 	--color-info-contrast-foreground: #a5b4fc;
 }
 
+/* ################################################## */
+/* TYPOGRAPHY */
+/* ################################################## */
+
 html,
 body {
 	@apply bg-base text-body;
@@ -123,11 +127,38 @@ h6 {
 	@apply font-bold text-heading;
 }
 
+h1 {
+	@apply text-2xl;
+}
+h2 {
+	@apply text-xl;
+}
+h3 {
+	@apply text-lg;
+}
+
+/* ################################################## */
+/* FORMS */
+/* ################################################## */
+
 label {
 	@apply font-bold uppercase text-heading;
 }
 
-input[type="text"] {
+input[type="text"],
+input[type="email"],
+input[type="text"],
+input[type="password"],
+input[type="number"],
+input[type="date"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+input[type="week"],
+textarea {
 	@apply block w-full pr-10 bg-base border-default-dark text-body placeholder-body;
 	@apply focus:outline-none focus:ring-primary focus:border-primary;
 	@apply sm:text-sm;

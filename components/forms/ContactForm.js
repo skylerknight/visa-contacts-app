@@ -14,7 +14,9 @@ const ContactForm = ({ id, email, firstName, lastName, phoneNumber }) => {
 	const router = useRouter();
 	const { contactsDispatch } = useContacts();
 
-	const onSubmit = (data) => {
+	const onSubmit = (data, e) => {
+		console.log("running");
+		e.preventDefault();
 		const payload = {
 			id: id || uuidv4(),
 			...data,
@@ -47,10 +49,15 @@ const ContactForm = ({ id, email, firstName, lastName, phoneNumber }) => {
 					<ContactFormInput name="lastName" label="Last Name" defaultValue={lastName} />
 				</div>
 				<div>
-					<ContactFormInput name="phoneNumber" label="Phone Number" defaultValue={phoneNumber} />
+					<ContactFormInput
+						type="tel"
+						name="phoneNumber"
+						label="Phone Number"
+						defaultValue={phoneNumber}
+					/>
 				</div>
 				<div>
-					<ContactFormInput name="email" label="Email Address" defaultValue={email} />
+					<ContactFormInput type="email" name="email" label="Email Address" defaultValue={email} />
 				</div>
 				<div className="flex flex-row items-center justify-end space-x-5 pt-5">
 					{id != null && (
@@ -59,7 +66,7 @@ const ContactForm = ({ id, email, firstName, lastName, phoneNumber }) => {
 						</button>
 					)}
 					<Link href="/">
-						<button type="submit" className="btn-default">
+						<button type="button" className="btn-default">
 							Cancel
 						</button>
 					</Link>
