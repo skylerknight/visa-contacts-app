@@ -58,15 +58,23 @@ const ContactCard = ({ index, id, email, firstName, lastName, phoneNumber }) => 
 					id={`contact-accordion-panel-${id}`}
 					aria-labelledby={`contact-accordion-header-${id}`}
 					onClick={(e) => e.stopPropagation()}>
-					<div className="flex flex-col space-y-4 p-5" aria-label="Contact Details">
-						<h4 aria-label="Phone Number" className="font-bold uppercase text-heading text-xs">
-							Phone Number
-						</h4>
-						<p>{formatPhoneNumber(phoneNumber)}</p>
-						<h4 aria-label="Email Address" className="font-bold uppercase text-heading text-xs">
-							Email Address
-						</h4>
-						<p>{email}</p>
+					<div className="flex flex-col space-y-5 p-5" aria-label="Contact Details">
+						<div>
+							<h4
+								aria-label="Phone Number"
+								className="mb-1 font-bold uppercase text-heading text-xs">
+								Phone Number
+							</h4>
+							<p>{formatPhoneNumber(phoneNumber)}</p>
+						</div>
+						<div>
+							<h4
+								aria-label="Email Address"
+								className="mb-1 font-bold uppercase text-heading text-xs">
+								Email Address
+							</h4>
+							<p>{email}</p>
+						</div>
 					</div>
 					<footer aria-label={`Contact ${index} controls`}>
 						<nav className="w-full flex flex-row items-center justify-between p-4 space-x-5 border-t border-default">
