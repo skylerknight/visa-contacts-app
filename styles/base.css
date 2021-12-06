@@ -181,7 +181,7 @@ textarea {
 .btn-danger-contrast,
 .btn-info,
 .btn-info-contrast {
-	@apply flex flex-row items-center justify-center px-4 py-2 gap-3 rounded-md;
+	@apply grid grid-flow-col items-center justify-center px-4 py-2 gap-3 rounded-md;
 	@apply focus:outline-none focus:ring-2 focus:ring-offset-base focus:ring-offset-2;
 }
 
