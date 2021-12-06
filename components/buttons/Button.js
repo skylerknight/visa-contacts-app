@@ -12,11 +12,7 @@ const Button = (props) => {
 			</a>
 		</Link>
 	) : (
-		<button
-			type={type || "button"}
-			aria-label={description}
-			className={`${setVariant(variant)}`}
-			{...props}>
+		<button type={type || "button"} className={`${setVariant(variant)}`} {...props}>
 			{children}
 		</button>
 	);

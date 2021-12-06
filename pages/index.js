@@ -34,7 +34,7 @@ export default function Home() {
 				}
 			/>
 			<main className="flex flex-col flex-1">
-				<div className="p-5 w-full max-w-screen-md mx-auto">
+				<div className="lg:p-5 w-full max-w-screen-md mx-auto">
 					<ContactList />
 				</div>
 			</main>

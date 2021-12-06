@@ -10,7 +10,7 @@ const Header = ({ leftControls, rightControls, title, centerTitle }) => {
 				<div>{leftControls}</div>
 				<div>{rightControls}</div>
 			</nav>
-			<div className="px-5 mt-10 w-full max-w-screen-md mx-auto">
+			<div className="lg:px-5 mt-10 w-full max-w-screen-md mx-auto">
 				<h2 className={`${centerTitle && "text-center"}`}>{title}</h2>
 			</div>
 		</header>

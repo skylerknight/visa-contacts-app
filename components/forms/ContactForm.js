@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Button from "../buttons/Button";
 import ContactFormInput from "./ContactFormInput";
 
 import { v4 as uuidv4 } from "uuid";
@@ -15,7 +16,6 @@ const ContactForm = ({ id, email, firstName, lastName, phoneNumber }) => {
 	const { contactsDispatch, confirmAndDelete } = useContacts();
 
 	const onSubmit = (data, e) => {
-		console.log("running");
 		e.preventDefault();
 		const payload = {
 			id: id || uuidv4(),
@@ -36,13 +36,13 @@ const ContactForm = ({ id, email, firstName, lastName, phoneNumber }) => {
 			<form
 				onSubmit={methods.handleSubmit(onSubmit)}
 				aria-label="Contact Information"
-				className="flex flex-col space-y-8 w-full">
+				className="flex flex-col space-y-5 w-full lg:space-y-8">
 				<div className="flex flex-row my-5">
 					<div className="w-24 h-24 flex flex-row m-auto bg-primary-contrast text-primary-contrast-foreground">
 						<UserIcon className="w-14 h-14 m-auto" />
 					</div>
 				</div>
-				<div className="flex flex-col space-y-8 sm:flex-row sm:space-x-5 sm:space-y-0">
+				<div className="grid grid-flow-row gap-5 lg:grid-flow-col lg:gap-8">
 					<ContactFormInput name="firstName" label="First Name" defaultValue={firstName} />
 					<ContactFormInput name="lastName" label="Last Name" defaultValue={lastName} />
 				</div>
@@ -57,23 +57,18 @@ const ContactForm = ({ id, email, firstName, lastName, phoneNumber }) => {
 				<div>
 					<ContactFormInput type="email" name="email" label="Email Address" defaultValue={email} />
 				</div>
-				<div className="flex flex-row items-center justify-end space-x-5 pt-5">
+				<div className="flex flex-row items-center justify-end pt-2.5">
 					{id != null && (
-						<button
-							type="button"
-							className="btn-danger-contrast mr-auto"
-							onClick={() => confirmAndDelete(id)}>
+						<Button variant="danger-contrast" onClick={() => confirmAndDelete(id)}>
 							<TrashIcon className="w-5 h-5" /> Delete
-						</button>
+						</Button>
 					)}
-					<Link href="/">
-						<button type="button" className="btn-default">
+					<div className="flex flex-row space-x-5  ml-auto">
+						<Button variant="default" href="/">
 							Cancel
-						</button>
-					</Link>
-					<button type="submit" className="btn-primary">
-						Save Contact
-					</button>
+						</Button>
+						<Button variant="primary">Save Contact</Button>
+					</div>
 				</div>
 			</form>
 		</FormProvider>
