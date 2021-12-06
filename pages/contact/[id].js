@@ -34,7 +34,6 @@ const EditContactpage = () => {
 				rightControls={
 					id != null && (
 						<Button
-							full
 							variant="danger-contrast"
 							aria-label="Delete Contact"
 							onClick={() => confirmAndDelete(id)}>
