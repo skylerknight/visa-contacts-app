@@ -1,4 +1,5 @@
 import React from "react";
+import DeleteDialog from "../components/DeleteDialog";
 
 export const ContactContext = React.createContext();
 export const useContacts = () => React.useContext(ContactContext);
@@ -47,8 +48,15 @@ export default function ContactsProvider({ children }) {
 		},
 	]);
 
+	const [pendingDeletion, setPendingDeletion] = React.useState(null);
+	const confirmAndDelete = async (id) => {
+		setPendingDeletion(id);
+	};
+
 	return (
-		<ContactContext.Provider value={{ contacts, contactsDispatch }}>
+		<ContactContext.Provider
+			value={{ contacts, contactsDispatch, confirmAndDelete, pendingDeletion, setPendingDeletion }}>
+			{pendingDeletion && <DeleteDialog />}
 			{children}
 		</ContactContext.Provider>
 	);

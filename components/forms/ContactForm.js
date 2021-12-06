@@ -12,7 +12,7 @@ import { TrashIcon, UserIcon } from "@heroicons/react/outline";
 const ContactForm = ({ id, email, firstName, lastName, phoneNumber }) => {
 	const methods = useForm();
 	const router = useRouter();
-	const { contactsDispatch } = useContacts();
+	const { contactsDispatch, confirmAndDelete } = useContacts();
 
 	const onSubmit = (data, e) => {
 		console.log("running");
@@ -28,11 +28,6 @@ const ContactForm = ({ id, email, firstName, lastName, phoneNumber }) => {
 			contactsDispatch({ type: "UPDATE_CONTACT", payload });
 		}
 
-		router.push("/");
-	};
-
-	const onDelete = () => {
-		contactsDispatch({ type: "DELETE_CONTACT", payload: id });
 		router.push("/");
 	};
 
@@ -61,7 +56,10 @@ const ContactForm = ({ id, email, firstName, lastName, phoneNumber }) => {
 				</div>
 				<div className="flex flex-row items-center justify-end space-x-5 pt-5">
 					{id != null && (
-						<button type="button" className="btn-danger-contrast mr-auto" onClick={onDelete}>
+						<button
+							type="button"
+							className="btn-danger-contrast mr-auto"
+							onClick={() => confirmAndDelete(id)}>
 							<TrashIcon className="w-5 h-5" /> Delete
 						</button>
 					)}

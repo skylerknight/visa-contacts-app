@@ -3,7 +3,6 @@ import Button from "./buttons/Button";
 import IconButton from "./buttons/IconButton";
 import { formatPhoneNumber } from "../helpers";
 import { useContacts } from "../contexts/contact";
-
 import {
 	ChevronDownIcon,
 	ChevronUpIcon,
@@ -13,7 +12,7 @@ import {
 } from "@heroicons/react/outline";
 
 const ContactCard = ({ id, email, firstName, lastName, phoneNumber }) => {
-	const { contactsDispatch } = useContacts();
+	const { confirmAndDelete } = useContacts();
 	const [isExpanded, setIsExpanded] = React.useState(false);
 
 	const handleCardClick = () => {
@@ -53,9 +52,7 @@ const ContactCard = ({ id, email, firstName, lastName, phoneNumber }) => {
 						{email}
 					</div>
 					<div className="w-full flex flex-row items-center justify-between p-4 space-x-5 border-t border-default">
-						<IconButton
-							variant="danger-contrast"
-							onClick={() => contactsDispatch({ type: "DELETE_CONTACT", payload: id })}>
+						<IconButton variant="danger-contrast" onClick={() => confirmAndDelete(id)}>
 							<TrashIcon className="w-5 h-5" />
 						</IconButton>
 						<Button href={`/contact/${id}`} variant="default">
