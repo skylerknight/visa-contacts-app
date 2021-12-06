@@ -12,7 +12,7 @@ import { ChevronLeftIcon, TrashIcon } from "@heroicons/react/outline";
 const EditContactpage = () => {
 	const router = useRouter();
 	const { id } = router.query;
-	const { contacts } = useContacts();
+	const { contacts, confirmAndDelete } = useContacts();
 	const [contact, setContact] = React.useState(null);
 
 	React.useEffect(() => {
