@@ -1,5 +1,5 @@
 import React from "react";
-import DeleteDialog from "../components/DeleteDialog";
+import DeleteDialog from "../components/dialogs/DeleteDialog";
 
 export const ContactContext = React.createContext();
 export const useContacts = () => React.useContext(ContactContext);

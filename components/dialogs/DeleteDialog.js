@@ -1,7 +1,7 @@
 import React from "react";
-import Button from "./buttons/Button";
+import Button from "../buttons/Button";
 import { useRouter } from "next/router";
-import { useContacts } from "../contexts/contact";
+import { useContacts } from "../../contexts/contact";
 import { TrashIcon } from "@heroicons/react/outline";
 
 const DeleteDialog = () => {
@@ -28,7 +28,7 @@ const DeleteDialog = () => {
 				role="dialog"
 				aria-modal="true"
 				aria-labelledby="dialog_label"
-				className="flex flex-col w-full max-w-lg bg-base !p-0 shadow-2xl">
+				className="flex flex-col w-full max-w-lg bg-base rounded-lg shadow-2xl overflow-hidden">
 				<div className="p-8">
 					<h2 id="dialog_label" className="mb-2 text-danger">
 						Confirm Delete
