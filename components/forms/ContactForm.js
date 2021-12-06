@@ -61,7 +61,7 @@ const ContactForm = ({ id, email, firstName, lastName, phoneNumber }) => {
 					<Button variant="default" href="/">
 						Cancel
 					</Button>
-					<Button variant="primary" aria-label="Save Contact Information">
+					<Button type="submit" variant="primary" aria-label="Save Contact Information">
 						Save Contact
 					</Button>
 				</div>
