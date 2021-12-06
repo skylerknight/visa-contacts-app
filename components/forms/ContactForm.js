@@ -33,7 +33,10 @@ const ContactForm = ({ id, email, firstName, lastName, phoneNumber }) => {
 
 	return (
 		<FormProvider {...methods}>
-			<form onSubmit={methods.handleSubmit(onSubmit)} className="flex flex-col space-y-8 w-full">
+			<form
+				onSubmit={methods.handleSubmit(onSubmit)}
+				aria-label="Contact Information"
+				className="flex flex-col space-y-8 w-full">
 				<div className="flex flex-row my-5">
 					<div className="w-24 h-24 flex flex-row m-auto bg-primary-contrast text-primary-contrast-foreground">
 						<UserIcon className="w-14 h-14 m-auto" />

@@ -28,22 +28,26 @@ const ContactFormInput = ({ type, name, label, defaultValue }) => {
 			<label htmlFor={name} className="text-xs">
 				{label}
 			</label>
-			<div className="mt-2">
+			<p className="mt-2">
 				<input
 					id={name}
 					name={name}
+					autoCorrect="off"
+					autoComplete={type}
 					type={type || "text"}
-					autoComplete={name}
+					aria-invalid={errors[name]}
 					defaultValue={defaultValue || ""}
-					aria-describedby={`${name}-description`}
+					aria-describedby={`${name}_error`}
 					{...register(name, { required: true, validate: (v) => validate(v) })}
 				/>
 				{errors[name] && (
-					<p className="text-xs p-2 mt-1 text-center bg-warning-contrast text-warning-contrast-foreground">
-						Please enter a valid {label}
-					</p>
+					<span
+						id={`${name}_error`}
+						className={`block text-xs p-2 mt-1 text-center bg-warning-contrast text-warning-contrast-foreground`}>
+						Error Please enter a valid {label}
+					</span>
 				)}
-			</div>
+			</p>
 		</div>
 	);
 };

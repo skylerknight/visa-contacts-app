@@ -2,7 +2,7 @@ import React from "react";
 
 const VisaLogo = () => {
 	return (
-		<div className="w-10 h-auto">
+		<div className="w-10 h-auto" aria-hidden="true">
 			<svg
 				role="img"
 				focusable="false"

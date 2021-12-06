@@ -21,20 +21,40 @@ const DeleteDialog = () => {
 	};
 
 	return (
-		<div className="fixed inset-0 flex flex-col items-center justify-center p-5 bg-neutral-900/50 z-50">
-			<div className="flex flex-col w-full max-w-lg bg-base shadow-2xl">
+		<div
+			className="fixed inset-0 flex flex-col items-center justify-center p-5 bg-neutral-900/50 z-50"
+			onClick={() => setPendingDeletion(null)}>
+			<div
+				role="dialog"
+				aria-modal="true"
+				aria-labelledby="dialog_label"
+				className="flex flex-col w-full max-w-lg bg-base !p-0 shadow-2xl">
 				<div className="p-8">
-					<h2 className="mb-2 text-danger">Confirm Delete</h2>
+					<h2 id="dialog_label" className="mb-2 text-danger">
+						Confirm Delete
+					</h2>
 					<p>Are you sure you want to delete {name}?</p>
 				</div>
-				<div className="flex flex-row justify-end space-x-5 p-4 bg-card">
-					<Button variant="default" onClick={() => setPendingDeletion(null)}>
-						Cancel
-					</Button>
-					<Button variant="danger" onClick={handleDelete}>
-						<TrashIcon className="w-5 h-5" />
-						Delete
-					</Button>
+				<div id="delete_dialog_controls" aria-label="Delete Contact Dialog Controls">
+					<div
+						aria-label="Delete Contact Dialog Controls"
+						className="flex flex-row justify-end space-x-5 p-4 bg-card">
+						<Button
+							variant="default"
+							value="cancel"
+							onClick={() => setPendingDeletion(null)}
+							aria-label="Cancel,">
+							Cancel
+						</Button>
+						<Button
+							variant="danger"
+							onClick={handleDelete}
+							value="default"
+							aria-label={`Delete ${name}`}>
+							<TrashIcon className="w-5 h-5" />
+							Delete
+						</Button>
+					</div>
 				</div>
 			</div>
 		</div>

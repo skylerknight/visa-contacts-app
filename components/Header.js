@@ -3,12 +3,15 @@ import React from "react";
 const Header = ({ leftControls, rightControls, title, centerTitle }) => {
 	return (
 		<header className="flex flex-col relative pb-5 lg:p-5">
-			<div className="flex flex-row items-center justify-between">
-				<div className="mr-auto">{leftControls}</div>
-				<div className="ml-auto">{rightControls}</div>
-			</div>
+			<nav
+				role="navigaiton"
+				className="flex flex-row items-center justify-between"
+				aria-label="Main Menu">
+				<div>{leftControls}</div>
+				<div>{rightControls}</div>
+			</nav>
 			<div className="px-5 mt-10 w-full max-w-screen-md mx-auto">
-				<h1 className={`${centerTitle && "text-center"}`}>{title}</h1>
+				<h2 className={`${centerTitle && "text-center"}`}>{title}</h2>
 			</div>
 		</header>
 	);
