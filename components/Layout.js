@@ -16,7 +16,7 @@ const Layout = ({ children }) => {
 					</h1>
 				</div>
 			</div>
-			<div className="p-5 col-span-3 lg:col-span-2 flex flex-col items-center justify-center lg:overlfow-x-hidden lg:overflow-y-scroll">
+			<div className="flex flex-col items-center justify-center col-span-3 pt-8 p-5 lg:col-span-2 lg:pt-5 lg:overlfow-x-hidden lg:overflow-y-scroll">
 				<div className="flex flex-col w-full h-full">{children}</div>
 			</div>
 		</div>
