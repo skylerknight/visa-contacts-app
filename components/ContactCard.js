@@ -33,7 +33,7 @@ const ContactCard = ({ index, id, email, firstName, lastName, phoneNumber }) => 
 					</div>
 					<div className="block flex-1 text-left">
 						<div className="sr-only">Contact {index} ,</div>
-						<p className={`font-bold text-primary ${isExpanded ? "text-lg" : "text-sm"}`}>
+						<p className={`font-bold ${isExpanded ? "text-lg" : "text-sm"}`}>
 							{firstName} {lastName}
 						</p>
 						{!isExpanded && (
