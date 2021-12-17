@@ -15,7 +15,7 @@ const ContactFormInput = ({ type, name, label, defaultValue }) => {
 			case "email":
 				return validator.isEmail(value);
 			case "tel":
-				return validator.isMobilePhone(value);
+				return value.length >= 10 && validator.isMobilePhone(value);
 			case "number":
 				return validator.isNumeric(value);
 			default:
