@@ -9,8 +9,6 @@ const contactsReducer = (state, action) => {
 	switch (type) {
 		case "CREATE_CONTACT":
 			return [...state, payload];
-		case "DELETE_CONTACT":
-			return state.filter((contact) => contact.id !== payload);
 		case "UPDATE_CONTACT":
 			return state.map((contact) => {
 				if (contact.id === payload.id) {
@@ -18,6 +16,8 @@ const contactsReducer = (state, action) => {
 				}
 				return contact;
 			});
+		case "DELETE_CONTACT":
+			return state.filter((contact) => contact.id !== payload);
 		default:
 			return state;
 	}
